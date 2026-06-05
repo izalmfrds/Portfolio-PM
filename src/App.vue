@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Analytics } from "@vercel/analytics/vue";
 import Header from "./components/Header.vue";
 import { useTranslations } from "./i18n/composables/useTranslations";
 import { usePreloader } from "./composables/usePreloader";
@@ -30,6 +31,7 @@ const { isTouch } = useAgent();
 </script>
 
 <template>
+  <Analytics />
   <Header />
 
   <!-- main page -->
