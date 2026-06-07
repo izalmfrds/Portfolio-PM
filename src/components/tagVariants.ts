@@ -1,15 +1,9 @@
 export type TagVariant =
-  | "three"
-  | "websockets"
+  | "agile"
+  | "clickup"
   | "react"
-  | "three"
-  | "websockets"
   | "redis"
-<<<<<<< Updated upstream
-=======
-  | "ganttchart"
   | "golang"
->>>>>>> Stashed changes
   | "gray"
   | "html"
   | "css"
@@ -22,17 +16,11 @@ export type TagVariant =
   | "glsl";
 
 export const tagLabels = {
-  three: "Three.js",
-  websockets: "WebSockets",
+  agile: "Agile",
+  clickup: "Clickup",
   react: "React",
-  three: "Three.js",
-  websockets: "WebSockets",
   redis: "Redis",
-<<<<<<< Updated upstream
-=======
-  ganttchart: "Gantt Chart",
   golang: "Golang",
->>>>>>> Stashed changes
   gray: "Gray",
   html: "HTML",
   css: "CSS",
