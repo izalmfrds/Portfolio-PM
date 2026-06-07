@@ -5,9 +5,13 @@ import type { ProjectContent } from "../../types";
 export default {
   title: "StreakOn",
   theme: "dark",
+<<<<<<< Updated upstream
   tags: ["next", "node", "postgresql", "redis"],
+=======
+  tags: ["agile", "clickup", "ganttchart"],
+>>>>>>> Stashed changes
   videoBorder: false,
-  live: "https://www.streakon.app",
+  live: "https://www.adenco.com.au/",
   description:
     "StreakOn is a habit tracking and social accountability platform designed to help users build consistency through shared progress and meaningful interactions.",
   caseStudy: {

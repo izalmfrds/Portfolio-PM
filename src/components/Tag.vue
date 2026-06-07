@@ -42,9 +42,15 @@ const classes = computed(() => ["tag", `tag-variant-${props.variant}`]);
       color: white;
     }
 
-    &-redis {
+    &-redis,
+    &-ganttchart {
       background-color: #ce4036;
       color: white;
+    }
+
+    &-golang {
+      background-color: #00add8;
+      color: #062f3a;
     }
 
     &-html {

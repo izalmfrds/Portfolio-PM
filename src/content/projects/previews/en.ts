@@ -3,22 +3,23 @@ import thumbnailQuibbo from "../../../assets/thumbnails/quibbo.webp";
 //import thumbnailParticles from "../../../assets/thumbnails/particles.webp";
 import thumbnailPokedex from "../../../assets/thumbnails/pokedex.webp";
 import thumbnailSharkie from "../../../assets/thumbnails/sharkie.webp";
-import thumbnailStreakon from "../../../assets/thumbnails/streakon.webp";
+import thumbnailAdenco from "../../../assets/thumbnails/adenco-thumb.png";
+import thumbnailWCC from "../../../assets/thumbnails/wcc-thumb.png";
 
 import type { ProjectPreview } from "../../types";
 
 export default [
   {
-    title: "StreakOn",
-    slug: "streakon",
-    thumbnail: thumbnailStreakon,
-    description: "Social habit tracking app",
+    title: "Adenco Enterprise System",
+    slug: "Adenco",
+    thumbnail: thumbnailAdenco,
+    description: "Construction management system",
   },
   {
-    title: "CubeWar",
-    slug: "cubewar",
-    thumbnail: thumbnailCubeWar,
-    description: "Multiplayer strategy game",
+    title: "WCC Digital Platform",
+    slug: "West Coast Civil",
+    thumbnail: thumbnailWCC,
+    description: "Construction management system",
   },
   {
     title: "Quibbo",

@@ -7,6 +7,7 @@ import RedisLogo from "../../../../components/icons/RedisLogo.vue";
 import TypescriptLogo from "../../../../components/icons/TypescriptLogo.vue";
 import TailwindLogo from "../../../../components/icons/TailwindLogo.vue";
 import VercelLogo from "../../../../components/icons/VercelLogo.vue";
+import GolangLogo from "../../../../components/icons/GolangLogo.vue";
 
 import type { CaseStudyTechIcon } from "../../../../content/types";
 
@@ -17,6 +18,7 @@ const logos = {
   node: { component: NodeLogo, color: "#8cc84b" },
   postgresql: { component: PostgresLogo, color: "#6aa6d6" },
   redis: { component: RedisLogo, color: "#ff4438" },
+  golang: { component: GolangLogo, color: "#00add8" },
   typescript: { component: TypescriptLogo, color: "#3a8eea" },
   tailwind: { component: TailwindLogo, color: "#38bdf8" },
   vercel: { component: VercelLogo, color: "#ffffff" },
