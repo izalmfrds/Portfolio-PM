@@ -11,7 +11,11 @@ export default [
   {
     title: "Adenco Enterprise System",
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     slug: "streakon",
+=======
+    slug: "Adenco",
+>>>>>>> Stashed changes
 =======
     slug: "Adenco",
 >>>>>>> Stashed changes
@@ -21,7 +25,11 @@ export default [
   {
     title: "WCC Digital Platform",
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     slug: "cubewar",
+=======
+    slug: "West Coast Civil",
+>>>>>>> Stashed changes
 =======
     slug: "West Coast Civil",
 >>>>>>> Stashed changes
