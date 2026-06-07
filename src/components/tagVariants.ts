@@ -2,6 +2,8 @@ export type TagVariant =
   | "agile"
   | "clickup"
   | "react"
+  | "three"
+  | "websockets"
   | "redis"
   | "golang"
   | "gray"
@@ -19,6 +21,8 @@ export const tagLabels = {
   agile: "Agile",
   clickup: "Clickup",
   react: "React",
+  three: "Three.js",
+  websockets: "WebSockets",
   redis: "Redis",
   golang: "Golang",
   gray: "Gray",
