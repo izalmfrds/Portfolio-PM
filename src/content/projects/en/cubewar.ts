@@ -82,3 +82,4 @@ export default {
     },
   ],
 } as const satisfies ProjectContent;
+
