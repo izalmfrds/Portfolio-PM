@@ -37,6 +37,16 @@ const classes = computed(() => ["tag", `tag-variant-${props.variant}`]);
       color: #0f2e36;
     }
 
+    &-agile {
+      background-color: #00b8d4;
+      color: white;
+    }
+
+    &-clickup {
+      background-color: #7b68ee;
+      color: white;
+    }
+
     &-websockets {
       background-color: #2674a4;
       color: white;

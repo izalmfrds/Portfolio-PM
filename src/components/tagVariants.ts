@@ -1,8 +1,9 @@
 export type TagVariant =
-  | "three"
-  | "websockets"
+  | "agile"
+  | "clickup"
   | "react"
   | "redis"
+  | "golang"
   | "gray"
   | "html"
   | "css"
@@ -15,10 +16,11 @@ export type TagVariant =
   | "glsl";
 
 export const tagLabels = {
-  three: "Three.js",
-  websockets: "WebSockets",
+  agile: "Agile",
+  clickup: "Clickup",
   react: "React",
   redis: "Redis",
+  golang: "Golang",
   gray: "Gray",
   html: "HTML",
   css: "CSS",

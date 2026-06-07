@@ -5,13 +5,14 @@ import type { ProjectComponent } from "../features/projects/types";
 
 export type ProjectId = (typeof projectIds)[number];
 
-export type CaseStudyStepIcon = "planning" | "design" | "development" | "testing" | "deployment";
+export type CaseStudyStepIcon = "initiation" | "planning" | "design" | "development" | "testing" | "deployment" | "execution" | "monitoring" | "closing" | "coordination" | "delivery";
 
 export type CaseStudyTechIcon =
   | "next"
   | "node"
   | "postgresql"
   | "redis"
+  | "golang"
   | "typescript"
   | "tailwind"
   | "vercel";

@@ -1,74 +1,70 @@
-import streakon0 from "../../../assets/images/projects/streakon/streakon-0.webp";
+import adex01 from "../../../assets/images/projects/adex/adex01.png";
 
 import type { ProjectContent } from "../../types";
 
 export default {
-  title: "StreakOn",
+  title: "Adenco Enterprise System",
   theme: "dark",
-  tags: ["next", "node", "postgresql", "redis"],
+  tags: ["agile", "clickup", "postgresql", "golang"],
   videoBorder: false,
   live: "https://www.streakon.app",
   description:
-    "StreakOn is a habit tracking and social accountability platform designed to help users build consistency through shared progress and meaningful interactions.",
+    "Adenco Enterprise System is a comprehensive enterprise solution designed to streamline construction operations through centralized data management and integrated workflows. By providing real-time visibility into critical business information, the platform empowers organizations to improve operational efficiency and make informed strategic decisions with confidence.",
   caseStudy: {
-    category: "Web & Mobile Application",
-    heroImage: streakon0,
+    category: "Web Application",
+    heroImage: adex01,
     meta: {
-      duration: "3 Weeks",
-      role: "Full Stack Developer",
-      teamSize: "2 Developers",
-      year: "2024",
+      duration: "3 Years",
+      role: "Project Management",
+      teamSize: "12 Developers",
+      year: "2025",
     },
     overview:
-      "The project focuses on building a reliable and scalable application that encourages positive daily habits through collaborative experiences.<br/><br/>It provides a smooth, engaging experience across web and mobile platforms.",
+      "Sustainability Management System is a digital platform developed for ADENCO to support the company’s sustainability initiatives within the construction industry. The system centralizes ESG-related data, facilitates sustainability reporting, tracks environmental and operational performance indicators, and provides actionable insights to support informed decision-making and regulatory compliance.",
     contributions: [
-      "Designed and implemented end-to-end system architecture",
-      "Developed user interfaces with a focus on usability",
-      "Built RESTful APIs and database integrations",
-      "Managed deployment and production environments",
-      "Ensured performance optimization and code quality",
-      "Collaborated on planning and technical decisions",
-    ],
+  "Conducted business analysis and facilitated requirement gathering sessions with key stakeholders.",
+  "Defined project scope, timelines, and delivery plans to ensure successful project execution.",
+  "Coordinated stakeholders and development teams to align business needs with technical solutions.",
+  "Tracked project progress and managed risks to ensure on-time and high-quality delivery.",
+  "Provided regular project updates and reporting to support strategic decision-making.",
+  "Ensured solutions were delivered in accordance with business requirements and digital transformation objectives."
+],
     tech: [
       { name: "Next.js", icon: "next", featured: true },
       { name: "Node.js", icon: "node", featured: true },
       { name: "PostgreSQL", icon: "postgresql", featured: true },
-      { name: "Redis", icon: "redis", featured: true },
+      { name: "Golang", icon: "golang", featured: true },
       { name: "TypeScript", icon: "typescript" },
       { name: "Tailwind CSS", icon: "tailwind" },
       { name: "Vercel", icon: "vercel" },
     ],
     execution: [
-      {
-        icon: "planning",
-        title: "Planning",
-        description: "Analyzed requirements and defined scope & timeline",
-      },
-      {
-        icon: "design",
-        title: "Design",
-        description: "Designed system flow, architecture, and UI/UX",
-      },
-      {
-        icon: "development",
-        title: "Development",
-        description: "Implemented features and integrated services",
-      },
-      {
-        icon: "testing",
-        title: "Testing",
-        description: "Conducted testing and ensured stability",
-      },
-      {
-        icon: "deployment",
-        title: "Deployment",
-        description: "Deployed to production and monitored",
-      },
-    ],
+
+  {
+    icon: "planning",
+    title: "Inisiation & Planning",
+    description: "Conducted requirement gathering to define project scope, timelines, and key deliverables."
+  },
+  {
+    icon: "execution",
+    title: "Execution",
+    description: "Coordinated stakeholders and development teams to ensure alignment between business requirements and technical solutions."
+  },
+  {
+    icon: "monitoring",
+    title: "Monitoring & Control",
+    description: "Monitored project progress, managed risks and issues, and provided regular status reporting to support decision-making."
+  },
+  {
+    icon: "closing",
+    title: "Closing",
+    description: "Ensured successful implementation, facilitated project handover, and captured lessons learned for continuous improvement."
+  }
+],
     challenges:
-      "Ensuring smooth performance and data consistency across multiple user interactions.",
+      "Synchronizing related modules from project creation, labor and equipment management, and cost forecasting through to project completion.",
     approach:
-      "Optimized backend logic and query performance with caching and structured data models.",
+      "ensuring that data connectivity is consistent from start to finish.",
     outcomes: [
       "Delivered a stable and scalable application within timeline",
       "Improved user engagement through intuitive experience",

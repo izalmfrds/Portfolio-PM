@@ -1,23 +1,23 @@
-import streakon0 from "../../../assets/images/projects/streakon/streakon-0.webp";
+import adex01 from "../../../assets/images/projects/adex/adex01.png";
 
 import type { ProjectContent } from "../../types";
 
 export default {
-  title: "StreakOn",
+  title: "Adenco Enterprise System",
   theme: "dark",
-  tags: ["next", "node", "postgresql", "redis"],
+  tags: ["next", "node", "postgresql", "golang"],
   videoBorder: false,
   live: "https://www.streakon.app",
   description:
     "StreakOn ist eine Plattform für Habit-Tracking und soziale Verbindlichkeit, die Nutzer:innen durch gemeinsamen Fortschritt und sinnvolle Interaktionen zu mehr Beständigkeit verhilft.",
   caseStudy: {
     category: "Web- & Mobile-Anwendung",
-    heroImage: streakon0,
+    heroImage: adex01,
     meta: {
-      duration: "3 Wochen",
-      role: "Full-Stack-Entwickler",
-      teamSize: "2 Entwickler",
-      year: "2024",
+      duration: "1 Years",
+      role: "Project Management",
+      teamSize: "12 Developers",
+      year: "2025",
     },
     overview:
       "Das Projekt konzentriert sich auf den Aufbau einer zuverlässigen und skalierbaren Anwendung, die positive tägliche Gewohnheiten durch gemeinsame Erlebnisse fördert.<br/><br/>Es bietet ein reibungsloses, ansprechendes Erlebnis auf Web- und Mobilplattformen.",
@@ -33,7 +33,7 @@ export default {
       { name: "Next.js", icon: "next", featured: true },
       { name: "Node.js", icon: "node", featured: true },
       { name: "PostgreSQL", icon: "postgresql", featured: true },
-      { name: "Redis", icon: "redis", featured: true },
+      { name: "Golang", icon: "golang", featured: true },
       { name: "TypeScript", icon: "typescript" },
       { name: "Tailwind CSS", icon: "tailwind" },
       { name: "Vercel", icon: "vercel" },
