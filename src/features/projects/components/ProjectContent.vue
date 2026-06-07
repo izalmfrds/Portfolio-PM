@@ -4,6 +4,7 @@ import ProjectHero from "./ProjectHero.vue";
 import ProjectComponent from "./ProjectComponent.vue";
 import Link from "../../../components/Link.vue";
 import NextProject from "./NextProject.vue";
+import ProjectCaseStudy from "./casestudy/ProjectCaseStudy.vue";
 import { locale } from "../../../i18n/store";
 import { previews } from "../../../content/projects/previews";
 import { ref, computed, watch, onMounted } from "vue";
@@ -34,6 +35,18 @@ const nextProject = computed(() => {
   return previews[nextIndex];
 });
 
+const prevProject = computed(() => {
+  const previews = loadedPreviews.value;
+  if (!previews) return null;
+
+  const currentIndex = previews.findIndex((p) => p.slug === projectId);
+  if (currentIndex === -1) return null;
+
+  const prevIndex = (currentIndex - 1 + previews.length) % previews.length;
+
+  return previews[prevIndex];
+});
+
 watch(locale, loadPreviews);
 
 onMounted(loadPreviews);
@@ -41,8 +54,16 @@ onMounted(loadPreviews);
 
 <template>
   <Layout class="project-content">
-    <ProjectHero :content="content" :projectId="projectId" />
-    <div class="project-content-components">
+    <ProjectCaseStudy
+      v-if="content.caseStudy"
+      :content="content"
+      :projectId="projectId"
+      :prevProject="prevProject"
+      :nextProject="nextProject"
+    />
+    <template v-else>
+      <ProjectHero :content="content" :projectId="projectId" />
+      <div class="project-content-components">
       <div
         v-for="(component, index) in content.components"
         :key="`${component.type}-${index}`"
@@ -50,19 +71,20 @@ onMounted(loadPreviews);
       >
         <ProjectComponent :type="component.type" :props="component.props" :index="index" />
       </div>
-    </div>
-    <div class="grid project-content-next-project-grid">
-      <Link
-        v-if="nextProject"
-        :to="`/project/${nextProject.slug}`"
-        replace
-        class="project-content-next-project"
-        data-cursor="arrow"
-        data-sound="click"
-      >
-        <NextProject :project="nextProject" />
-      </Link>
-    </div>
+      </div>
+      <div class="grid project-content-next-project-grid">
+        <Link
+          v-if="nextProject"
+          :to="`/project/${nextProject.slug}`"
+          replace
+          class="project-content-next-project"
+          data-cursor="arrow"
+          data-sound="click"
+        >
+          <NextProject :project="nextProject" />
+        </Link>
+      </div>
+    </template>
   </Layout>
 </template>
 
