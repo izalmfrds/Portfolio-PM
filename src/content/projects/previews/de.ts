@@ -1,5 +1,4 @@
 import thumbnailCubeWar from "../../../assets/thumbnails/cubewar.webp";
-import thumbnailQuibbo from "../../../assets/thumbnails/quibbo.webp";
 //import thumbnailParticles from "../../../assets/thumbnails/particles.webp";
 import thumbnailPokedex from "../../../assets/thumbnails/pokedex.webp";
 import thumbnailSharkie from "../../../assets/thumbnails/sharkie.webp";
@@ -21,10 +20,10 @@ export default [
     description: "Multiplayer-Strategiespiel",
   },
   {
-    title: "Quibbo",
-    slug: "quibbo",
-    thumbnail: thumbnailQuibbo,
-    description: "Multiplayer-Gaming-Plattform",
+    title: "DIGITS",
+    slug: "digits",
+    thumbnail: thumbnailCubeWar,
+    description: "Telkom-Registrierungssystem",
   },
   {
     title: "Sharkie",

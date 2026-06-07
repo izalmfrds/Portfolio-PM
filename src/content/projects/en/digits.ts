@@ -3,12 +3,12 @@ import adex01 from "../../../assets/images/projects/adex/adex01.png";
 import type { ProjectContent } from "../../types";
 
 export default {
-  title: "WCC Digital Platform",
+  title: "DIGITS",
   theme: "dark",
   tags: ["agile", "clickup", "ganttchart"],
   videoBorder: false,
   description:
-    "WCC Digital Platform is a comprehensive enterprise solution designed to streamline construction operations through centralized data management and integrated workflows. By providing real-time visibility into critical business information, the platform empowers organizations to improve operational efficiency and make informed strategic decisions with confidence.",
+    "DIGITS is a registration system developed for Telkom to streamline registration workflows through centralized data management and integrated processes.",
   caseStudy: {
     category: "Web Application",
     heroImage: adex01,
@@ -19,7 +19,7 @@ export default {
       year: "2025",
     },
     overview:
-      "Sustainability Management System is a digital platform developed for WCC to support the company’s sustainability initiatives within the construction industry. The system centralizes ESG-related data, facilitates sustainability reporting, tracks environmental and operational performance indicators, and provides actionable insights to support informed decision-making and regulatory compliance.",
+      "DIGITS is a digital registration platform developed for Telkom. The system centralizes registration data, streamlines administrative workflows, and provides reliable information to support efficient registration management.",
     contributions: [
       "Conducted business analysis and facilitated requirement gathering sessions with key stakeholders.",
       "Defined project scope, timelines, and delivery plans to ensure successful project execution.",
@@ -63,11 +63,11 @@ export default {
       },
     ],
     challenges:
-      "Synchronizing related modules from project creation, labor and equipment management, and cost forecasting through to project completion.",
-    approach: "ensuring that data connectivity is consistent from start to finish.",
+      "Synchronizing registration data and related workflows while maintaining accuracy throughout the process.",
+    approach: "Ensuring that data connectivity is consistent from start to finish.",
     outcomes: [
       "Delivered a stable and scalable application within timeline",
-      "Improved user engagement through intuitive experience",
+      "Improved registration efficiency through an intuitive experience",
       "Built a strong foundation for future feature expansion",
     ],
   },

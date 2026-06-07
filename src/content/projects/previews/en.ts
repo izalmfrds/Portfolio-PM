@@ -1,9 +1,9 @@
-import thumbnailQuibbo from "../../../assets/thumbnails/quibbo.webp";
 //import thumbnailParticles from "../../../assets/thumbnails/particles.webp";
 import thumbnailPokedex from "../../../assets/thumbnails/pokedex.webp";
 import thumbnailSharkie from "../../../assets/thumbnails/sharkie.webp";
 import thumbnailAdenco from "../../../assets/thumbnails/adenco-thumb.png";
 import thumbnailWCC from "../../../assets/thumbnails/wcc-thumb.png";
+import thumbnailDigits from "../../../assets/thumbnails/digits-thumb.png";
 
 import type { ProjectPreview } from "../../types";
 
@@ -21,10 +21,10 @@ export default [
     description: "Construction management system",
   },
   {
-    title: "Quibbo",
-    slug: "quibbo",
-    thumbnail: thumbnailQuibbo,
-    description: "Multiplayer gaming platform",
+    title: "DIGITS",
+    slug: "digits",
+    thumbnail: thumbnailDigits,
+    description: "Telkom registration system",
   },
   {
     title: "Sharkie",
