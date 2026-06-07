@@ -5,6 +5,7 @@ export type TagVariant =
   | "three"
   | "websockets"
   | "redis"
+  | "ganttchart"
   | "golang"
   | "gray"
   | "html"
@@ -24,6 +25,7 @@ export const tagLabels = {
   three: "Three.js",
   websockets: "WebSockets",
   redis: "Redis",
+  ganttchart: "Gantt Chart",
   golang: "Golang",
   gray: "Gray",
   html: "HTML",

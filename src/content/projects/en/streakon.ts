@@ -5,9 +5,9 @@ import type { ProjectContent } from "../../types";
 export default {
   title: "Adenco Enterprise System",
   theme: "dark",
-  tags: ["agile", "clickup", "postgresql", "golang"],
+  tags: ["agile", "clickup", "ganttchart"],
   videoBorder: false,
-  live: "https://www.streakon.app",
+  live: "https://www.adenco.com.au/",
   description:
     "Adenco Enterprise System is a comprehensive enterprise solution designed to streamline construction operations through centralized data management and integrated workflows. By providing real-time visibility into critical business information, the platform empowers organizations to improve operational efficiency and make informed strategic decisions with confidence.",
   caseStudy: {
