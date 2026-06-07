@@ -10,13 +10,13 @@ import type { ProjectPreview } from "../../types";
 export default [
   {
     title: "Adenco Enterprise System",
-    slug: "Adenco",
+    slug: "streakon",
     thumbnail: thumbnailAdenco,
     description: "Construction management system",
   },
   {
     title: "WCC Digital Platform",
-    slug: "West Coast Civil",
+    slug: "cubewar",
     thumbnail: thumbnailWCC,
     description: "Construction management system",
   },

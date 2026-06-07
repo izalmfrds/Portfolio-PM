@@ -69,7 +69,7 @@ export interface SkillContent {
 
 export interface ProjectPreview {
   title: string;
-  slug: string;
+  slug: ProjectId;
   thumbnail: string;
   description: string;
 }
