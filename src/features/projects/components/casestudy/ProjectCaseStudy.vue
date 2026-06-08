@@ -124,52 +124,7 @@ const scrollToOverview = () => scrollToSection("#cs-overview");
       </aside>
     </div>
 
-    <div class="cs-quick-links">
-      <button
-        class="cs-quick-link"
-        type="button"
-        data-sound="click"
-        data-hoversound="hover"
-        @click="scrollToSection('#cs-overview')"
-      >
-        <span class="cs-quick-link-icon"><FileText /></span>
-        <span class="cs-quick-link-copy">
-          <span class="cs-quick-link-title">{{ t("project-overview") }}</span>
-          <span class="cs-quick-link-description"
-            >A brief overview of the project, its objectives, challenges, and impact.</span
-          >
-        </span>
-        <ArrowRight class="cs-quick-link-arrow" />
-      </button>
-      <button
-        class="cs-quick-link"
-        type="button"
-        data-sound="click"
-        data-hoversound="hover"
-        @click="scrollToSection('#cs-contributions')"
-      >
-        <span class="cs-quick-link-icon"><UserIcon /></span>
-        <span class="cs-quick-link-copy">
-          <span class="cs-quick-link-title">{{ t("my-contributions") }}</span>
-          <span class="cs-quick-link-description">My key responsibilities and the impact I made in this project.</span>
-        </span>
-        <ArrowRight class="cs-quick-link-arrow" />
-      </button>
-      <button
-        class="cs-quick-link"
-        type="button"
-        data-sound="click"
-        data-hoversound="hover"
-        @click="scrollToSection('#cs-tech')"
-      >
-        <span class="cs-quick-link-icon"><CodeIcon /></span>
-        <span class="cs-quick-link-copy">
-          <span class="cs-quick-link-title">{{ t("tech-stack") }}</span>
-          <span class="cs-quick-link-description">Technologies and tools used to build this project.</span>
-        </span>
-        <ArrowRight class="cs-quick-link-arrow" />
-      </button>
-    </div>
+  
 
     <!-- Top sections -->
     <div class="cs-grid">
