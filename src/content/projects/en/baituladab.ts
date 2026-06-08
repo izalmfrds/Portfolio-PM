@@ -1,17 +1,17 @@
-import digits from "../../../assets/images/projects/digits/digits-thumb.png";
+import baitulAdab from "../../../assets/images/projects/baituladab/baitul-thumb.webp";
 
 import type { ProjectContent } from "../../types";
 
 export default {
-  title: "DIGITS",
+  title: "Baitul Adab Schools",
   theme: "dark",
   tags: ["agile", "clickup", "ganttchart"],
   videoBorder: false,
   description:
-    "DIGITS is a registration system developed for Telkom to streamline registration workflows through centralized data management and integrated processes.",
+    "Baitul Adab Schools is a landing page project designed to present school information, programs, and admissions in a clear digital experience. The platform helps families discover the school, understand its values, and access key information with confidence.",
   caseStudy: {
     category: "Web Application",
-    heroImage: digits,
+    heroImage: baitulAdab,
     meta: {
       duration: "3 Years",
       role: "Project Management",
@@ -19,7 +19,7 @@ export default {
       year: "2025",
     },
     overview:
-      "DIGITS is a digital registration platform developed for Telkom. The system centralizes registration data, streamlines administrative workflows, and provides reliable information to support efficient registration management.",
+      "Baitul Adab Schools is a digital landing page developed to support school communication and online visibility. The website centralizes important school information, highlights programs and learning activities, and provides a clear pathway for prospective families to understand the school and take the next step.",
     contributions: [
       "Conducted business analysis and facilitated requirement gathering sessions with key stakeholders.",
       "Defined project scope, timelines, and delivery plans to ensure successful project execution.",
@@ -63,11 +63,11 @@ export default {
       },
     ],
     challenges:
-      "Synchronizing registration data and related workflows while maintaining accuracy throughout the process.",
-    approach: "Ensuring that data connectivity is consistent from start to finish.",
+      "Organizing school information, programs, and admissions content into a clear experience that is easy for families to explore.",
+    approach: "Ensuring the content structure and user journey stay consistent from discovery through inquiry.",
     outcomes: [
       "Delivered a stable and scalable application within timeline",
-      "Improved registration efficiency through an intuitive experience",
+      "Improved user engagement through intuitive experience",
       "Built a strong foundation for future feature expansion",
     ],
   },

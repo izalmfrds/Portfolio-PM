@@ -3,6 +3,7 @@ import thumbnailCubeWar from "../../../assets/thumbnails/cubewar.webp";
 import thumbnailPokedex from "../../../assets/thumbnails/pokedex.webp";
 import thumbnailSharkie from "../../../assets/thumbnails/sharkie.webp";
 import thumbnailStreakon from "../../../assets/thumbnails/streakon.webp";
+import thumbnailBaitulAdab from "../../../assets/images/projects/baituladab/baitul-thumb.webp";
 
 import type { ProjectPreview } from "../../types";
 
@@ -24,6 +25,12 @@ export default [
     slug: "digits",
     thumbnail: thumbnailCubeWar,
     description: "Telkom-Registrierungssystem",
+  },
+  {
+    title: "Baitul Adab Schools",
+    slug: "baituladab",
+    thumbnail: thumbnailBaitulAdab,
+    description: "Landingpage für Baitul Adab Kids Schools",
   },
   {
     title: "Sharkie",

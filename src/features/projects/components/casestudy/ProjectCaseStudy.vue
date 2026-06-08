@@ -21,6 +21,7 @@ import CalendarCheck from "../../../../components/icons/CalendarCheck.vue";
 import UserIcon from "../../../../components/icons/UserIcon.vue";
 import UsersIcon from "../../../../components/icons/UsersIcon.vue";
 import CalendarIcon from "../../../../components/icons/CalendarIcon.vue";
+import ArrowRight from "../../../../components/icons/ArrowRight.vue";
 import ArrowRightLong from "../../../../components/icons/ArrowRightLong.vue";
 
 import type { ProjectContent, ProjectPreview } from "../../../../content/types";
@@ -32,8 +33,8 @@ const { content, prevProject, nextProject } = defineProps<{
   nextProject?: ProjectPreview | null;
 }>();
 
-const scrollToOverview = () => {
-  const el = document.querySelector<HTMLElement>("#cs-overview");
+const scrollToSection = (id: string) => {
+  const el = document.querySelector<HTMLElement>(id);
   if (!el) return;
   if (lenis.value) {
     lenis.value.scrollTo(el, { offset: -120 });
@@ -41,6 +42,8 @@ const scrollToOverview = () => {
     el.scrollIntoView({ behavior: "smooth" });
   }
 };
+
+const scrollToOverview = () => scrollToSection("#cs-overview");
 </script>
 
 <template>
@@ -63,6 +66,7 @@ const scrollToOverview = () => {
             @click="scrollToOverview"
           >
             {{ t("project-overview") }}
+            <ArrowRight class="cs-hero-button-arrow" />
           </Button>
           <Link
             v-if="content.caseStudy.pdf"
@@ -71,7 +75,12 @@ const scrollToOverview = () => {
             class="cs-hero-button"
             data-cursor="arrow-external"
           >
-            <Button renderAs="div" variant="border" class="children-unclickable cs-hero-button-pdf" data-hoversound="hover">
+            <Button
+              renderAs="div"
+              variant="border"
+              class="children-unclickable cs-hero-button-pdf"
+              data-hoversound="hover"
+            >
               <Download class="cs-hero-button-icon" />
               {{ t("case-study-pdf") }}
             </Button>
@@ -115,6 +124,53 @@ const scrollToOverview = () => {
       </aside>
     </div>
 
+    <div class="cs-quick-links">
+      <button
+        class="cs-quick-link"
+        type="button"
+        data-sound="click"
+        data-hoversound="hover"
+        @click="scrollToSection('#cs-overview')"
+      >
+        <span class="cs-quick-link-icon"><FileText /></span>
+        <span class="cs-quick-link-copy">
+          <span class="cs-quick-link-title">{{ t("project-overview") }}</span>
+          <span class="cs-quick-link-description"
+            >A brief overview of the project, its objectives, challenges, and impact.</span
+          >
+        </span>
+        <ArrowRight class="cs-quick-link-arrow" />
+      </button>
+      <button
+        class="cs-quick-link"
+        type="button"
+        data-sound="click"
+        data-hoversound="hover"
+        @click="scrollToSection('#cs-contributions')"
+      >
+        <span class="cs-quick-link-icon"><UserIcon /></span>
+        <span class="cs-quick-link-copy">
+          <span class="cs-quick-link-title">{{ t("my-contributions") }}</span>
+          <span class="cs-quick-link-description">My key responsibilities and the impact I made in this project.</span>
+        </span>
+        <ArrowRight class="cs-quick-link-arrow" />
+      </button>
+      <button
+        class="cs-quick-link"
+        type="button"
+        data-sound="click"
+        data-hoversound="hover"
+        @click="scrollToSection('#cs-tech')"
+      >
+        <span class="cs-quick-link-icon"><CodeIcon /></span>
+        <span class="cs-quick-link-copy">
+          <span class="cs-quick-link-title">{{ t("tech-stack") }}</span>
+          <span class="cs-quick-link-description">Technologies and tools used to build this project.</span>
+        </span>
+        <ArrowRight class="cs-quick-link-arrow" />
+      </button>
+    </div>
+
     <!-- Top sections -->
     <div class="cs-grid">
       <CaseStudyCard id="cs-overview" :title="t('project-overview')" class="cs-area-overview">
@@ -122,7 +178,7 @@ const scrollToOverview = () => {
         <p v-html="content.caseStudy.overview"></p>
       </CaseStudyCard>
 
-      <CaseStudyCard :title="t('my-contributions')" class="cs-area-contributions">
+      <CaseStudyCard id="cs-contributions" :title="t('my-contributions')" class="cs-area-contributions">
         <template #icon><ClipboardList /></template>
         <ul class="cs-list">
           <li v-for="item in content.caseStudy.contributions" :key="item" class="cs-list-item">
@@ -132,7 +188,7 @@ const scrollToOverview = () => {
         </ul>
       </CaseStudyCard>
 
-      <CaseStudyCard :title="t('tech-stack')" class="cs-area-tech">
+      <CaseStudyCard id="cs-tech" :title="t('tech-stack')" class="cs-area-tech">
         <template #icon><CodeIcon /></template>
         <div class="cs-tech-featured">
           <div v-for="tech in content.caseStudy.tech.filter((x) => x.featured)" :key="tech.name" class="cs-tech-tile">
@@ -239,23 +295,51 @@ const scrollToOverview = () => {
 
 /* ---------- Hero ---------- */
 .cs-hero {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-areas: "text" "image" "meta";
   gap: var(--space-lg);
+  min-height: calc(100svh - var(--height-header) - 210px);
+  overflow: hidden;
+  isolation: isolate;
 
   @include mixins.mq("md") {
-    grid-template-columns: 1.05fr 0.95fr;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.25fr);
     grid-template-areas:
       "text image"
       "meta meta";
     align-items: center;
-    column-gap: var(--space-xl);
+    column-gap: clamp(24px, 5vw, 72px);
   }
 
   @include mixins.mq("lg") {
-    grid-template-columns: minmax(0, 4fr) minmax(0, 5fr) minmax(0, 3fr);
-    grid-template-areas: "text image meta";
+    min-height: calc(100svh - var(--height-header) - 150px);
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  &::before {
+    inset: 12% -18% 6% 26%;
+    background:
+      radial-gradient(circle at 62% 55%, color-mix(in srgb, var(--color-accent-400) 42%, transparent), transparent 42%),
+      radial-gradient(circle at 44% 74%, rgba(13, 198, 255, 0.34), transparent 34%);
+    filter: blur(34px);
+    opacity: 0.92;
+  }
+
+  &::after {
+    inset: 5% 3% 14% 36%;
+    border-radius: 50%;
+    border: var(--stroke-sm) solid color-mix(in srgb, var(--color-accent-400) 20%, transparent);
+    opacity: 0.55;
+    transform: rotate(-8deg);
   }
 
   &-text {
@@ -264,6 +348,8 @@ const scrollToOverview = () => {
     flex-direction: column;
     align-items: flex-start;
     gap: var(--space-md);
+    max-width: 560px;
+    z-index: 1;
   }
 
   &-badge {
@@ -276,17 +362,13 @@ const scrollToOverview = () => {
   }
 
   &-title {
-    font-size: var(--font-size-title-md);
+    font-size: clamp(48px, 8vw, 82px);
     font-weight: 900;
     line-height: var(--line-height-title);
-
-    @include mixins.mq("lg") {
-      font-size: var(--font-size-title-lg);
-    }
   }
 
   &-description {
-    color: var(--color-text-300);
+    color: color-mix(in srgb, var(--color-text-400) 82%, transparent);
     font-size: var(--font-size-md);
     line-height: var(--line-height-copy);
 
@@ -312,6 +394,11 @@ const scrollToOverview = () => {
     text-decoration: none;
   }
 
+  &-button-arrow {
+    width: var(--icon-size-xs);
+    margin-left: var(--space-xs);
+  }
+
   &-button-pdf {
     gap: var(--space-xs);
   }
@@ -327,28 +414,31 @@ const scrollToOverview = () => {
     display: flex;
     align-items: center;
     justify-content: center;
+    min-width: 0;
+    z-index: 1;
 
     &::before {
       content: "";
       position: absolute;
-      inset: 0;
+      inset: 8% 1% 3% 5%;
       background: radial-gradient(
-        circle at 60% 45%,
-        color-mix(in srgb, var(--color-accent-400) 22%, transparent),
-        transparent 62%
+        circle at 52% 58%,
+        color-mix(in srgb, var(--color-accent-400) 46%, transparent),
+        transparent 58%
       );
-      filter: blur(6px);
+      filter: blur(28px);
       z-index: 0;
     }
 
     img {
       position: relative;
       z-index: 1;
-      width: 100%;
+      width: min(100%, 820px);
       height: auto;
-      max-height: 460px;
+      max-height: 620px;
       object-fit: contain;
-      border-radius: var(--radius-lg);
+      border-radius: 0;
+      filter: drop-shadow(0 26px 46px rgba(0, 0, 0, 0.4));
     }
   }
 }
@@ -356,36 +446,46 @@ const scrollToOverview = () => {
 /* ---------- Meta panel ---------- */
 .cs-meta {
   grid-area: meta;
-  display: flex;
-  gap: var(--space-md);
-  padding: var(--space-lg);
-  background-color: var(--color-grayscale-400);
-  border: var(--stroke-sm) solid color-mix(in srgb, var(--color-text-400) 8%, transparent);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  background-color: color-mix(in srgb, var(--color-grayscale-400) 76%, transparent);
+  border: var(--stroke-sm) solid color-mix(in srgb, var(--color-text-400) 12%, transparent);
   border-radius: var(--radius-lg);
-  flex-wrap: wrap;
-  flex-direction: row;
+  box-shadow: inset 0 1px 0 color-mix(in srgb, var(--color-text-400) 8%, transparent);
+  backdrop-filter: blur(14px);
+  z-index: 2;
 
   @include mixins.mq("md") {
-    justify-content: space-between;
-  }
-
-  @include mixins.mq("lg") {
-    flex-direction: column;
-    flex-wrap: nowrap;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    padding: var(--space-lg);
   }
 
   &-item {
     display: flex;
     align-items: center;
     gap: var(--space-sm);
+    min-width: 0;
+    padding: var(--space-xs) 0;
+
+    @include mixins.mq("md") {
+      padding: 0 var(--space-md);
+      border-left: var(--stroke-sm) solid color-mix(in srgb, var(--color-text-400) 10%, transparent);
+
+      &:first-child {
+        border-left: 0;
+        padding-left: 0;
+      }
+    }
   }
 
   &-icon {
     display: grid;
     place-items: center;
     flex-shrink: 0;
-    width: 42px;
-    height: 42px;
+    width: 48px;
+    height: 48px;
     border-radius: var(--radius-md);
     color: var(--color-accent-400);
     background-color: color-mix(in srgb, var(--color-accent-400) 16%, transparent);
@@ -401,10 +501,91 @@ const scrollToOverview = () => {
     color: var(--color-text-300);
   }
 
+  &-text {
+    min-width: 0;
+  }
+
   &-value {
     font-size: var(--font-size-md);
     font-weight: 700;
     color: var(--color-text-400);
+  }
+}
+
+.cs-quick-links {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+  margin-top: calc(var(--space-md) * -1);
+
+  @include mixins.mq("md") {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.cs-quick-link {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--space-md);
+  min-height: 120px;
+  padding: var(--space-lg);
+  text-align: left;
+  border: var(--stroke-sm) solid color-mix(in srgb, var(--color-text-400) 10%, transparent);
+  border-radius: var(--radius-lg);
+  color: var(--color-text-400);
+  background-color: color-mix(in srgb, var(--color-grayscale-400) 82%, transparent);
+  box-shadow: inset 0 1px 0 color-mix(in srgb, var(--color-text-400) 7%, transparent);
+  transition:
+    transform 0.18s ease-in-out,
+    border-color 0.18s ease-in-out,
+    background-color 0.18s ease-in-out;
+
+  @include mixins.hover {
+    &:hover {
+      transform: translateY(-2px);
+      border-color: color-mix(in srgb, var(--color-accent-400) 38%, transparent);
+      background-color: color-mix(in srgb, var(--color-grayscale-400) 92%, transparent);
+    }
+  }
+
+  &-icon {
+    display: grid;
+    place-items: center;
+    width: 54px;
+    height: 54px;
+    border-radius: var(--radius-md);
+    color: var(--color-accent-400);
+    background-color: color-mix(in srgb, var(--color-accent-400) 16%, transparent);
+
+    :deep(svg) {
+      width: 25px;
+      height: 25px;
+    }
+  }
+
+  &-copy {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xxs);
+    min-width: 0;
+  }
+
+  &-title {
+    font-size: var(--font-size-xl);
+    font-weight: 800;
+    line-height: var(--line-height-title);
+  }
+
+  &-description {
+    color: var(--color-text-300);
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-copy);
+  }
+
+  &-arrow {
+    width: var(--icon-size-sm);
+    color: var(--color-text-300);
   }
 }
 

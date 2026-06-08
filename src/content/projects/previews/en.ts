@@ -1,9 +1,8 @@
 //import thumbnailParticles from "../../../assets/thumbnails/particles.webp";
-import thumbnailPokedex from "../../../assets/thumbnails/pokedex.webp";
-import thumbnailSharkie from "../../../assets/thumbnails/sharkie.webp";
 import thumbnailAdenco from "../../../assets/thumbnails/adenco-thumb.png";
 import thumbnailWCC from "../../../assets/thumbnails/wcc-thumb.png";
 import thumbnailDigits from "../../../assets/thumbnails/digits-thumb.png";
+import thumbnailBaitulAdab from "../../../assets/images/projects/baituladab/baitul-thumb.webp";
 
 import type { ProjectPreview } from "../../types";
 
@@ -24,13 +23,13 @@ export default [
     title: "DIGITS",
     slug: "digits",
     thumbnail: thumbnailDigits,
-    description: "Telkom registration system",
+    description: "Telkom registration schools system",
   },
   {
-    title: "Sharkie",
-    slug: "sharkie",
-    thumbnail: thumbnailSharkie,
-    description: "2D adventure game",
+    title: "Baitul Adab Schools",
+    slug: "baituladab",
+    thumbnail: thumbnailBaitulAdab,
+    description: "Landing page for Baitul Adab Kids Schools",
   },
   /**  {
     title: "WebGL Particles",
@@ -38,10 +37,10 @@ export default [
     thumbnail: thumbnailParticles,
     description: "Dynamic 3D particles",
   }, */
-  {
-    title: "Pokédex",
-    slug: "pokedex",
-    thumbnail: thumbnailPokedex,
-    description: "Open-source learning project",
-  },
+  // {
+  //   title: "Pokédex",
+  //   slug: "pokedex",
+  //   thumbnail: thumbnailPokedex,
+  //   description: "Open-source learning project",
+  // },
 ] as const satisfies ProjectPreview[];
