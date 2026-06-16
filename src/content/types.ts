@@ -15,7 +15,13 @@ export type CaseStudyTechIcon =
   | "golang"
   | "typescript"
   | "tailwind"
-  | "vercel";
+  | "vercel"
+  | "figma"
+  | "design"
+  | "miro"
+  | "user"
+  | "wireframe"
+  | "prototype";
 
 export interface CaseStudyMeta {
   duration?: string;

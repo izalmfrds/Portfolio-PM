@@ -8,6 +8,12 @@ import TypescriptLogo from "../../../../components/icons/TypescriptLogo.vue";
 import TailwindLogo from "../../../../components/icons/TailwindLogo.vue";
 import VercelLogo from "../../../../components/icons/VercelLogo.vue";
 import GolangLogo from "../../../../components/icons/GolangLogo.vue";
+import FigmaLogo from "../../../../components/icons/FigmaLogo.vue";
+import DesignIcon from "../../../../components/icons/DesignIcon.vue";
+import MiroLogo from "../../../../components/icons/MiroLogo.vue";
+import UserIcon from "../../../../components/icons/UserIcon.vue";
+import WireframeIcon from "../../../../components/icons/WireframeIcon.vue";
+import PrototypeIcon from "../../../../components/icons/PrototypeIcon.vue";
 
 import type { CaseStudyTechIcon } from "../../../../content/types";
 
@@ -22,6 +28,12 @@ const logos = {
   typescript: { component: TypescriptLogo, color: "#3a8eea" },
   tailwind: { component: TailwindLogo, color: "#38bdf8" },
   vercel: { component: VercelLogo, color: "#ffffff" },
+  figma: { component: FigmaLogo, color: "#f24e1e" },
+  design: { component: DesignIcon, color: "#8b5cf6" },
+  miro: { component: MiroLogo, color: "#050038" },
+  user: { component: UserIcon, color: "#10b981" },
+  wireframe: { component: WireframeIcon, color: "#6b7280" },
+  prototype: { component: PrototypeIcon, color: "#3b82f6" },
 } as const satisfies Record<CaseStudyTechIcon, { component: unknown; color: string }>;
 
 const logo = computed(() => logos[icon]);
