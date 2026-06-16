@@ -21,7 +21,11 @@ export type CaseStudyTechIcon =
   | "miro"
   | "user"
   | "wireframe"
-  | "prototype";
+  | "prototype"
+  | "clickup"
+  | "analytics"
+  | "search"
+  | "seo";
 
 export interface CaseStudyMeta {
   duration?: string;

@@ -19,7 +19,8 @@ export type TagVariant =
   | "glsl"
   | "uiux"
   | "figma"
-  | "designthinking";
+  | "designthinking"
+  | "seo";
 
 export const tagLabels = {
   agile: "Agile",
@@ -43,4 +44,5 @@ export const tagLabels = {
   uiux: "UI/UX",
   figma: "Figma",
   designthinking: "Design Thinking",
+  seo: "SEO",
 } as const satisfies Record<TagVariant, string>;

@@ -14,6 +14,10 @@ import MiroLogo from "../../../../components/icons/MiroLogo.vue";
 import UserIcon from "../../../../components/icons/UserIcon.vue";
 import WireframeIcon from "../../../../components/icons/WireframeIcon.vue";
 import PrototypeIcon from "../../../../components/icons/PrototypeIcon.vue";
+import ClickupLogo from "../../../../components/icons/ClickupLogo.vue";
+import AnalyticsIcon from "../../../../components/icons/AnalyticsIcon.vue";
+import SearchIcon from "../../../../components/icons/SearchIcon.vue";
+import SeoIcon from "../../../../components/icons/SeoIcon.vue";
 
 import type { CaseStudyTechIcon } from "../../../../content/types";
 
@@ -34,6 +38,10 @@ const logos = {
   user: { component: UserIcon, color: "#10b981" },
   wireframe: { component: WireframeIcon, color: "#6b7280" },
   prototype: { component: PrototypeIcon, color: "#3b82f6" },
+  clickup: { component: ClickupLogo, color: "#7b68ee" },
+  analytics: { component: AnalyticsIcon, color: "#f97316" },
+  search: { component: SearchIcon, color: "#3b82f6" },
+  seo: { component: SeoIcon, color: "#22c55e" },
 } as const satisfies Record<CaseStudyTechIcon, { component: unknown; color: string }>;
 
 const logo = computed(() => logos[icon]);
