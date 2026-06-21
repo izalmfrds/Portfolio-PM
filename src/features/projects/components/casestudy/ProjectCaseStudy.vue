@@ -145,16 +145,10 @@ const scrollToOverview = () => scrollToSection("#cs-overview");
 
       <CaseStudyCard id="cs-tech" :title="t('tech-stack')" class="cs-area-tech">
         <template #icon><CodeIcon /></template>
-        <div class="cs-tech-featured">
-          <div v-for="tech in content.caseStudy.tech.filter((x) => x.featured)" :key="tech.name" class="cs-tech-tile">
+        <div class="cs-tech-grid">
+          <div v-for="tech in content.caseStudy.tech" :key="tech.name" class="cs-tech-tile">
             <span class="cs-tech-tile-logo"><TechLogo :icon="tech.icon" /></span>
             <span class="cs-tech-tile-name">{{ tech.name }}</span>
-          </div>
-        </div>
-        <div class="cs-tech-pills">
-          <div v-for="tech in content.caseStudy.tech.filter((x) => !x.featured)" :key="tech.name" class="cs-tech-pill">
-            <span class="cs-tech-pill-logo"><TechLogo :icon="tech.icon" /></span>
-            <span>{{ tech.name }}</span>
           </div>
         </div>
       </CaseStudyCard>
@@ -629,7 +623,7 @@ const scrollToOverview = () => scrollToSection("#cs-overview");
 }
 
 /* ---------- Tech stack ---------- */
-.cs-tech-featured {
+.cs-tech-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: var(--space-sm);
@@ -643,11 +637,19 @@ const scrollToOverview = () => scrollToSection("#cs-overview");
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: var(--space-xs);
   padding: var(--space-md) var(--space-xs);
   border-radius: var(--radius-md);
   background-color: color-mix(in srgb, var(--color-text-400) 5%, transparent);
   border: var(--stroke-sm) solid color-mix(in srgb, var(--color-text-400) 8%, transparent);
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+
+  &:hover {
+    background-color: color-mix(in srgb, var(--color-text-400) 10%, transparent);
+    border-color: color-mix(in srgb, var(--color-text-400) 18%, transparent);
+    transform: translateY(-2px);
+  }
 
   &-logo {
     width: 28px;
@@ -658,29 +660,6 @@ const scrollToOverview = () => scrollToSection("#cs-overview");
     font-size: var(--font-size-xs);
     color: var(--color-text-300);
     text-align: center;
-  }
-}
-
-.cs-tech-pills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-xs);
-}
-
-.cs-tech-pill {
-  display: flex;
-  align-items: center;
-  gap: var(--space-xs);
-  padding: var(--space-xxs) var(--space-sm);
-  border-radius: var(--radius-md);
-  font-size: var(--font-size-xs);
-  color: var(--color-text-400);
-  background-color: color-mix(in srgb, var(--color-text-400) 5%, transparent);
-  border: var(--stroke-sm) solid color-mix(in srgb, var(--color-text-400) 8%, transparent);
-
-  &-logo {
-    width: 16px;
-    height: 16px;
   }
 }
 

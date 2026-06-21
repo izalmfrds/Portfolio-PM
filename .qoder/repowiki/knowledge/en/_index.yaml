@@ -1,0 +1,15 @@
+# 知识卡导出索引文件
+schema_version: 1
+locale: en-US
+branch: main
+nodes_managed: true
+exported_at: "2026-06-21T14:41:53Z"
+modules:
+    "":
+        dir_name: Portfolio-PM
+        title: Portfolio-PM
+        scope: []
+        source_files: []
+        children: []
+        depends_on: []
+        related_to: []
