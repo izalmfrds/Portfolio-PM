@@ -5,10 +5,15 @@ import { locale } from "../../../i18n/store";
 import PreviewCard from "../../projects/components/PreviewCard.vue";
 import NotchSection from "../../../components/NotchSection.vue";
 import Banner from "../../../components/Banner.vue";
+import Button from "../../../components/Button.vue";
 import { t } from "../../../i18n/utils/translate";
 import { isFeatureEnabled } from "../../../utils/features";
+import { useRouter } from "../../../composables/useRouter";
 
 import type { ProjectPreview } from "../../../content/types";
+
+const router = useRouter();
+const showArchive = isFeatureEnabled("archive");
 
 const loadedPreviews = ref<ProjectPreview[] | null>(null);
 
@@ -44,6 +49,19 @@ onMounted(loadPreviews);
       <div class="projects-cards">
         <PreviewCard v-for="preview in loadedPreviews" :key="preview.title" :preview="preview" />
         <PreviewCard v-if="isFeatureEnabled('startProject')" />
+      </div>
+    </div>
+    <div v-if="showArchive" class="grid">
+      <div class="projects-archive-cta">
+        <Button
+          renderAs="div"
+          variant="accent"
+          size="lg"
+          @click="router.push('/archive')"
+          data-cursor="circle-white"
+          data-sound="click"
+          data-hoversound="hover"
+        >{{ t('view-all-projects') }}</Button>
       </div>
     </div>
   </div>
@@ -153,6 +171,17 @@ onMounted(loadPreviews);
 
     @include mixins.mq("xl") {
       grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    }
+  }
+
+  &-archive-cta {
+    grid-column: 1 / span 12;
+    display: flex;
+    justify-content: center;
+    padding-top: var(--space-md);
+
+    @include mixins.mq("lg") {
+      grid-column: 3 / span 8;
     }
   }
 }

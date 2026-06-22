@@ -7,9 +7,10 @@ import Cursor from "./components/Cursor.vue";
 import { useAgent } from "./composables/useAgent";
 import { useMusic } from "./features/sounds/composables/useMusic";
 import { useHowler } from "./features/sounds/composables/useHowler";
-import { useRouteObserver } from "./composables/useRouteObserver";
+import { useRouteObserver, isArchive } from "./composables/useRouteObserver";
 import Home from "./features/home/components/Home.vue";
 import Project from "./features/projects/components/Project.vue";
+import ArchivePage from "./features/archive/components/ArchivePage.vue";
 import { useProjectTransition } from "./composables/useProjectTransition";
 import { useScroll } from "./composables/useScroll";
 import { projectVisible } from "./composables/useRouteObserver";
@@ -32,12 +33,17 @@ const { isTouch } = useAgent();
 
 <template>
   <Analytics />
-  <Header />
+  <Header v-show="!isArchive" />
 
   <!-- main page -->
-  <div :class="{ 'home-wrapper-projectIsReady': projectVisible }">
-    <Home />
-  </div>
+  <keep-alive>
+    <div v-show="!isArchive" :class="{ 'home-wrapper-projectIsReady': projectVisible }">
+      <Home />
+    </div>
+  </keep-alive>
+
+  <!-- archive page -->
+  <ArchivePage v-if="isArchive" />
 
   <!-- overlay page -->
   <ProjectBackground />

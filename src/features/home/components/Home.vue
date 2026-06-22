@@ -6,7 +6,7 @@ import About from "./About.vue";
 import Projects from "./Projects.vue";
 import Contact from "./Contact.vue";
 import Footer from "../../../components/Footer.vue";
-import { ref, onMounted, onUnmounted, watchEffect, computed, watch } from "vue";
+import { ref, onMounted, onUnmounted, onActivated, onDeactivated, watchEffect, computed, watch } from "vue";
 import { three } from "../../../three";
 import { animations } from "../../../animations";
 import HeaderHome from "../../../components/HeaderHome.vue";
@@ -90,6 +90,24 @@ onMounted(() => {
   }
 
   gsap.ticker.add(updateCursor);
+});
+
+onActivated(() => {
+  // Re-initialize when component is re-activated from keep-alive
+  // Re-setup IntersectionObserver
+  if (introRef.value && !stickyObserver.value) {
+    stickyObserver.value = new IntersectionObserver(handleIntersection);
+    stickyObserver.value.observe(introRef.value);
+  }
+  
+  gsap.ticker.add(updateCursor);
+});
+
+onDeactivated(() => {
+  // Clean up when component is deactivated (not unmounted)
+  stickyObserver.value?.disconnect();
+  document.documentElement.style.cursor = "";
+  gsap.ticker.remove(updateCursor);
 });
 
 onUnmounted(() => {

@@ -1,5 +1,7 @@
-import { ref, computed, onMounted, onUnmounted } from "vue";
+import { ref, computed, onMounted, onUnmounted, watch } from "vue";
 import { isTransitioning } from "./useProjectTransition";
+import { lenis } from "./useScroll";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 // -----------------------------------------------------------------------------
 // GLOBAL REACTIVE PATH
@@ -15,9 +17,17 @@ export const isProjectRoute = (path: string) => {
   return path.match(/^\/project\/([^/]+)$/);
 };
 
+export const isArchiveRoute = (path: string) => {
+  return path === "/archive";
+};
+
 export const projectId = computed(() => {
   const match = isProjectRoute(path.value);
   return match ? match[1] : null;
+});
+
+export const isArchive = computed(() => {
+  return isArchiveRoute(path.value);
 });
 
 export const projectVisible = computed(() => {
@@ -71,6 +81,29 @@ export function useRouteObserver() {
       path.value = newPath;
     }
   };
+  
+  // Reset scroll when leaving archive page
+  watch(isArchive, (newIsArchive, oldIsArchive) => {
+    if (oldIsArchive && !newIsArchive) {
+      // Navigating away from archive - reset scroll to top
+      queueMicrotask(() => {
+        // Force refresh Lenis to ensure smooth scrolling
+        if (lenis.value) {
+          lenis.value.scrollTo(0, { immediate: true });
+          // Re-enable smooth scrolling
+          setTimeout(() => {
+            if (lenis.value) {
+              lenis.value.start();
+              ScrollTrigger.refresh();
+            }
+          }, 50);
+        } else {
+          window.scrollTo(0, 0);
+        }
+      });
+    }
+  });
+  
   onMounted(() => {
     patchHistory();
     update();
@@ -87,6 +120,7 @@ export function useRouteObserver() {
   return {
     path,
     projectId,
+    isArchive,
     recentProjectId,
   };
 }

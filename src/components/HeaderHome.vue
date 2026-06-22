@@ -6,10 +6,18 @@ import { lenis } from "../composables/useScroll";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useHeaderTheme } from "../composables/useHeaderTheme";
 import { projectId } from "../composables/useRouteObserver";
+import { useRouter } from "../composables/useRouter";
+import { isFeatureEnabled } from "../utils/features";
+
+const router = useRouter();
 
 const handleLinkClick = (link: string) => {
   if (!lenis.value) return;
   lenis.value.scrollTo(link);
+};
+
+const handleArchiveClick = () => {
+  router.push("/archive");
 };
 
 type ActiveLink = "about" | "projects" | "contact";
@@ -19,7 +27,10 @@ const ariaLabels = {
   about: t("about"),
   projects: t("projects"),
   contact: t("contact"),
+  archive: t("archive"),
 };
+
+const showArchive = isFeatureEnabled("archive");
 
 const isMounted = ref(false);
 
@@ -87,6 +98,18 @@ onMounted(() => {
         data-hoversound="hover"
       >
         {{ t(section) }}
+      </HeaderLink>
+      <HeaderLink
+        v-if="showArchive"
+        :is-active="false"
+        :class="['header-home-link', 'children-unclickable']"
+        @click="handleArchiveClick"
+        :is-dark-theme="isDarkTheme"
+        :aria-label="ariaLabels.archive"
+        data-sound="click"
+        data-hoversound="hover"
+      >
+        {{ t('archive') }}
       </HeaderLink>
     </div>
   </div>
