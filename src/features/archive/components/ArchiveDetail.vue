@@ -130,6 +130,7 @@ const statusLabel = computed(() => (props.project ? statusLabelMap[props.project
   flex-direction: column;
   gap: var(--space-xl);
   width: 100%;
+  padding-top: var(--space-lg);
 }
 
 .archive-detail-empty {
@@ -158,7 +159,6 @@ const statusLabel = computed(() => (props.project ? statusLabelMap[props.project
   flex-direction: column;
   gap: var(--space-md);
   padding-bottom: var(--space-lg);
-  border-bottom: var(--stroke-sm) solid color-mix(in srgb, var(--color-text-400) 8%, transparent);
 }
 
 .archive-detail-status {

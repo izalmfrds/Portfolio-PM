@@ -49,6 +49,8 @@ const handleBreadcrumbClick = (path: string) => {
   flex-direction: column;
   gap: var(--space-lg);
   width: 100%;
+  padding-bottom: var(--space-lg);
+  border-bottom: var(--stroke-sm) solid color-mix(in srgb, var(--color-text-400) 8%, transparent);
 }
 
 .archive-breadcrumb {

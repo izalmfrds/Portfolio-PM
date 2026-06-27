@@ -45,13 +45,12 @@ const {
   border: var(--stroke-sm) solid color-mix(in srgb, var(--color-text-400) 8%, transparent);
   border-radius: var(--radius-xl);
   overflow-y: auto;
-  max-height: calc(100vh - 200px);
+  max-height: calc(100vh - 100px);
 
   @include mixins.mq("lg") {
     width: 320px;
     flex-shrink: 0;
-    position: sticky;
-    top: calc(var(--height-header) + var(--space-lg));
+    max-height: calc(100vh - 80px);
   }
 
   &-tree {

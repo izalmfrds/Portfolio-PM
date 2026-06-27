@@ -13,10 +13,12 @@ const { selectedProject } = useArchiveExplorer();
   <div class="archive-page">
     <Layout>
       <div class="archive-content">
-        <ArchiveHeader />
         <div class="archive-layout">
           <ArchiveExplorer />
-          <ArchiveDetail :project="selectedProject" />
+          <div class="archive-main">
+            <ArchiveHeader />
+            <ArchiveDetail :project="selectedProject" />
+          </div>
         </div>
       </div>
       <Footer :withSocial="false" />
@@ -34,7 +36,6 @@ const { selectedProject } = useArchiveExplorer();
 .archive-content {
   display: flex;
   flex-direction: column;
-  gap: var(--space-xl);
   padding-top: var(--space-xl);
   padding-bottom: var(--space-xxxl);
   padding-left: var(--space-outer);
@@ -44,7 +45,6 @@ const { selectedProject } = useArchiveExplorer();
   margin: 0 auto;
 
   @include mixins.mq("md") {
-    gap: var(--space-xxl);
     padding-top: var(--space-xxl);
   }
 }
@@ -59,5 +59,13 @@ const { selectedProject } = useArchiveExplorer();
     flex-direction: row;
     align-items: flex-start;
   }
+}
+
+.archive-main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+  flex: 1;
+  min-width: 0;
 }
 </style>
