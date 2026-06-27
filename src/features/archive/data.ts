@@ -1,5 +1,9 @@
 import type { ArchiveProject, ArchiveCategory, ArchiveOrganization } from "./types";
 
+import adencoThumb from "../../assets/thumbnails/adenco-thumb.png";
+import digitsThumb from "../../assets/thumbnails/digits-thumb.png";
+import wccThumb from "../../assets/thumbnails/wcc-thumb.png";
+
 export const archiveOrganizations: ArchiveOrganization[] = [
   "ALTIMEDA",
   "MY_TEAM_PRODUCT", 
@@ -24,6 +28,7 @@ export const archiveProjects: ArchiveProject[] = [
     },
     summary:
       "Enterprise resource planning system for a construction company, integrating project management, procurement, financial tracking, and workforce scheduling into a unified platform.",
+    mockup: adencoThumb,
     responsibilities: [
       "Requirement Analysis",
       "Product Discovery",
@@ -78,6 +83,7 @@ export const archiveProjects: ArchiveProject[] = [
     },
     summary:
       "A workforce management platform handling employee scheduling, attendance tracking, and performance analytics for enterprise clients.",
+    mockup: wccThumb,
     responsibilities: [
       "Product Discovery",
       "Sprint Planning",
@@ -217,6 +223,7 @@ export const archiveProjects: ArchiveProject[] = [
     },
     summary:
       "A comprehensive school management system covering student enrollment, grading, attendance, and parent communication for educational institutions.",
+    mockup: digitsThumb,
     responsibilities: [
       "Product Discovery",
       "Sprint Planning",

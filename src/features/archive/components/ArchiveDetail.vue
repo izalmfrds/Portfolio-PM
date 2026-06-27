@@ -37,6 +37,28 @@ const statusLabel = computed(() => (props.project ? statusLabelMap[props.project
   </div>
 
   <div v-else class="archive-detail">
+    <!-- Mockup Image -->
+    <section class="archive-mockup">
+      <div v-if="project.mockup" class="archive-mockup-img-wrap">
+        <img
+          :src="project.mockup"
+          :alt="`${project.name} mockup`"
+          class="archive-mockup-img"
+        />
+      </div>
+      <div v-else class="archive-mockup-placeholder">
+        <svg viewBox="0 0 80 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="80" height="54" rx="8" fill="currentColor" fill-opacity="0.06"/>
+          <rect x="6" y="6" width="68" height="38" rx="4" fill="currentColor" fill-opacity="0.08"/>
+          <rect x="28" y="48" width="24" height="3" rx="1.5" fill="currentColor" fill-opacity="0.1"/>
+          <rect x="18" y="44" width="44" height="2" rx="1" fill="currentColor" fill-opacity="0.08"/>
+          <circle cx="40" cy="25" r="8" fill="currentColor" fill-opacity="0.1"/>
+          <path d="M36 25l3 3 5-6" stroke="currentColor" stroke-opacity="0.25" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>{{ project.name }}</span>
+      </div>
+    </section>
+
     <!-- Header Section -->
     <section class="archive-detail-header">
       <div class="archive-detail-status" :style="{ backgroundColor: statusColor }">
@@ -131,6 +153,56 @@ const statusLabel = computed(() => (props.project ? statusLabelMap[props.project
   gap: var(--space-xl);
   width: 100%;
   padding-top: var(--space-lg);
+}
+
+.archive-mockup {
+  width: 100%;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  border: var(--stroke-sm) solid color-mix(in srgb, var(--color-text-400) 8%, transparent);
+  background-color: var(--color-grayscale-400);
+}
+
+.archive-mockup-img-wrap {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.archive-mockup-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+  transition: transform 0.4s ease;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+
+.archive-mockup-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  aspect-ratio: 16 / 9;
+  color: var(--color-text-300);
+
+  svg {
+    width: 80px;
+    height: 54px;
+    opacity: 0.6;
+  }
+
+  span {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-200);
+    font-weight: 500;
+    opacity: 0.6;
+  }
 }
 
 .archive-detail-empty {

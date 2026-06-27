@@ -44,6 +44,7 @@ export interface ArchiveProject {
   organization: ArchiveOrganization;
   info: ArchiveProjectInfo;
   summary: string;
+  mockup?: string;
   responsibilities: string[];
   tech: CaseStudyTech[];
   challenges: ArchiveChallenge[];

@@ -61,6 +61,13 @@ const { selectedProject } = useArchiveExplorer();
   }
 }
 
+:deep(.archive-explorer) {
+  @include mixins.mq("lg") {
+    position: sticky;
+    top: var(--space-xl);
+  }
+}
+
 .archive-main {
   display: flex;
   flex-direction: column;
