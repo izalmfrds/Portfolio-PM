@@ -2,7 +2,7 @@
 import { t } from "../../../i18n/utils/translate";
 import ArchiveSearch from "./ArchiveSearch.vue";
 import ArchiveFolder from "./ArchiveFolder.vue";
-import { archiveCategories } from "../data";
+import { archiveOrganizations } from "../data";
 import { useArchiveExplorer } from "../composables/useArchiveExplorer";
 
 const {
@@ -21,11 +21,11 @@ const {
     <ArchiveSearch @search="setSearch" />
     <div class="archive-explorer-tree">
       <ArchiveFolder
-        v-for="cat in archiveCategories"
-        :key="cat"
-        :category="cat"
-        :projects="groupedProjects[cat] || []"
-        :expanded="isFolderExpanded(cat)"
+        v-for="org in archiveOrganizations"
+        :key="org"
+        :category="org"
+        :projects="groupedProjects[org] || []"
+        :expanded="isFolderExpanded(org)"
         :selected-project-id="selectedProjectId"
         @toggle="toggleFolder"
         @select="selectProject"
@@ -39,17 +39,17 @@ const {
 .archive-explorer {
   display: flex;
   flex-direction: column;
-  gap: var(--space-sm);
-  padding: var(--space-md);
+  gap: var(--space-md);
+  padding: var(--space-lg);
   background-color: var(--color-grayscale-400);
   border: var(--stroke-sm) solid color-mix(in srgb, var(--color-text-400) 8%, transparent);
   border-radius: var(--radius-xl);
   overflow-y: auto;
+  max-height: calc(100vh - 200px);
 
   @include mixins.mq("lg") {
     width: 320px;
     flex-shrink: 0;
-    max-height: calc(100vh - 200px);
     position: sticky;
     top: calc(var(--height-header) + var(--space-lg));
   }
@@ -57,7 +57,7 @@ const {
   &-tree {
     display: flex;
     flex-direction: column;
-    gap: var(--space-xxs);
+    gap: var(--space-sm);
   }
 
   &-empty {

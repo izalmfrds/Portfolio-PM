@@ -35,7 +35,7 @@ const { selectedProject } = useArchiveExplorer();
   display: flex;
   flex-direction: column;
   gap: var(--space-xl);
-  padding-top: calc(var(--height-header) + var(--space-xl));
+  padding-top: var(--space-xl);
   padding-bottom: var(--space-xxxl);
   padding-left: var(--space-outer);
   padding-right: var(--space-outer);
@@ -45,14 +45,14 @@ const { selectedProject } = useArchiveExplorer();
 
   @include mixins.mq("md") {
     gap: var(--space-xxl);
-    padding-top: calc(var(--height-header) + var(--space-xxl));
+    padding-top: var(--space-xxl);
   }
 }
 
 .archive-layout {
   display: flex;
   flex-direction: column;
-  gap: var(--space-lg);
+  gap: var(--space-xl);
   width: 100%;
 
   @include mixins.mq("lg") {

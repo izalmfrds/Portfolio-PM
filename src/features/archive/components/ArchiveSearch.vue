@@ -47,10 +47,10 @@ const handleClear = () => {
 .archive-search {
   display: flex;
   align-items: center;
-  gap: var(--space-xs);
-  padding: var(--space-xs) var(--space-sm);
-  border-radius: var(--radius-md);
-  background-color: color-mix(in srgb, var(--color-text-400) 5%, transparent);
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-background-400);
   border: var(--stroke-sm) solid color-mix(in srgb, var(--color-text-400) 8%, transparent);
   transition: border-color 0.2s ease;
 
@@ -59,8 +59,8 @@ const handleClear = () => {
   }
 
   &-icon {
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
     flex-shrink: 0;
     color: var(--color-text-300);
   }
@@ -85,13 +85,13 @@ const handleClear = () => {
     flex-shrink: 0;
     display: grid;
     place-items: center;
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
     border: none;
     background: color-mix(in srgb, var(--color-text-400) 10%, transparent);
     border-radius: 50%;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1;
     color: var(--color-text-300);
     transition: background-color 0.2s ease;

@@ -42,5 +42,14 @@
   "source-code": "Source Code",
   "switch-to-project": "Switch to project {project}",
   "version": "Version",
-  "view-project": "View project"
+  "view-project": "View project",
+  "organization-altemeda": "ALTIMEDA",
+  "organization-my-team-product": "MY TEAM PRODUCT",
+  "organization-telkom-foundation": "TELKOM FOUNDATION",
+  "organization-personal-projects": "PERSONAL PROJECTS",
+  "project-archive": "PROJECT ARCHIVE",
+  "archive-description": "Explore all projects, case studies and experiments.",
+  "select-project": "Select a project to view details",
+  "no-results": "No projects found",
+  "search-projects": "Search projects..."
 }

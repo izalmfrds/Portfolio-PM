@@ -1,4 +1,11 @@
-import type { ArchiveProject, ArchiveCategory } from "./types";
+import type { ArchiveProject, ArchiveCategory, ArchiveOrganization } from "./types";
+
+export const archiveOrganizations: ArchiveOrganization[] = [
+  "ALTIMEDA",
+  "MY_TEAM_PRODUCT", 
+  "TELKOM_FOUNDATION",
+  "PERSONAL_PROJECTS"
+];
 
 export const archiveProjects: ArchiveProject[] = [
   {
@@ -7,6 +14,7 @@ export const archiveProjects: ArchiveProject[] = [
     type: "Construction Management Platform",
     status: "production",
     category: "enterprise-systems",
+    organization: "ALTIMEDA",
     info: {
       role: "Project Manager",
       industry: "Construction",
@@ -60,6 +68,7 @@ export const archiveProjects: ArchiveProject[] = [
     type: "Workforce Management System",
     status: "active-development",
     category: "enterprise-systems",
+    organization: "ALTIMEDA",
     info: {
       role: "Project Manager",
       industry: "Human Resources",
@@ -105,6 +114,7 @@ export const archiveProjects: ArchiveProject[] = [
     type: "AI Operations System",
     status: "completed",
     category: "enterprise-systems",
+    organization: "ALTIMEDA",
     info: {
       role: "Project Manager",
       industry: "Technology",
@@ -146,11 +156,58 @@ export const archiveProjects: ArchiveProject[] = [
     ],
   },
   {
+    id: "atlas",
+    name: "ATLAS Workflow Automation",
+    type: "Workflow Automation Platform",
+    status: "active-development",
+    category: "enterprise-systems",
+    organization: "ALTIMEDA",
+    info: {
+      role: "Project Manager",
+      industry: "Technology",
+      duration: "2024 - Present",
+      teamSize: "5 Members",
+      platform: "Web Application",
+    },
+    summary:
+      "A workflow automation platform that streamlines business processes through customizable automation rules and integrations with existing enterprise systems.",
+    responsibilities: [
+      "Product Discovery",
+      "Sprint Planning",
+      "Stakeholder Management",
+      "Delivery Management",
+    ],
+    tech: [
+      { name: "Next.js", icon: "next" },
+      { name: "Node.js", icon: "node" },
+      { name: "TypeScript", icon: "typescript" },
+      { name: "PostgreSQL", icon: "postgresql" },
+    ],
+    challenges: [
+      {
+        challenge: "Creating a flexible automation engine that works across different business domains.",
+        solution: "Built a modular rule-based system with drag-and-drop workflow builder and extensible integration connectors.",
+      },
+    ],
+    achievements: [
+      { value: "50+", label: "Automated Workflows" },
+      { value: "3", label: "Enterprise Integrations" },
+    ],
+    gallery: [],
+    timeline: [
+      { label: "Research" },
+      { label: "Discovery" },
+      { label: "Planning" },
+      { label: "Development" },
+    ],
+  },
+  {
     id: "digits",
     name: "DIGITS",
     type: "Education Management Platform",
     status: "production",
     category: "education",
+    organization: "TELKOM_FOUNDATION",
     info: {
       role: "Project Manager",
       industry: "Education",
@@ -201,6 +258,7 @@ export const archiveProjects: ArchiveProject[] = [
     type: "School Website & Portal",
     status: "production",
     category: "education",
+    organization: "MY_TEAM_PRODUCT",
     info: {
       role: "Project Manager",
       industry: "Education",
@@ -242,10 +300,11 @@ export const archiveProjects: ArchiveProject[] = [
   },
   {
     id: "empatrima-quiz",
-    name: "Empatrima Quiz",
+    name: "Empatrima QUIZ",
     type: "Online Assessment Tool",
     status: "completed",
     category: "education",
+    organization: "MY_TEAM_PRODUCT",
     info: {
       role: "Project Manager",
       industry: "Education",
@@ -289,6 +348,7 @@ export const archiveProjects: ArchiveProject[] = [
     type: "Internal Dashboard Tool",
     status: "maintenance",
     category: "internal-products",
+    organization: "MY_TEAM_PRODUCT",
     info: {
       role: "Project Manager",
       industry: "Internal Tools",
@@ -326,20 +386,66 @@ export const archiveProjects: ArchiveProject[] = [
     ],
   },
   {
-    id: "pm-dashboard",
-    name: "PM Dashboard",
-    type: "Project Management Dashboard",
+    id: "x-pos",
+    name: "X-POS",
+    type: "Point of Sale System",
     status: "active-development",
     category: "internal-products",
+    organization: "MY_TEAM_PRODUCT",
     info: {
       role: "Project Manager",
-      industry: "Internal Tools",
+      industry: "Retail",
       duration: "2024 - Present",
-      teamSize: "2 Members",
+      teamSize: "4 Members",
       platform: "Web Application",
     },
     summary:
-      "A personal project management dashboard providing bird's-eye view of all active projects, sprint progress, and team velocity metrics.",
+      "A modern point of sale system for retail businesses with inventory management, customer tracking, and sales analytics.",
+    responsibilities: [
+      "Product Discovery",
+      "Sprint Planning",
+      "Stakeholder Management",
+      "Delivery Management",
+    ],
+    tech: [
+      { name: "Next.js", icon: "next" },
+      { name: "Node.js", icon: "node" },
+      { name: "PostgreSQL", icon: "postgresql" },
+      { name: "TypeScript", icon: "typescript" },
+    ],
+    challenges: [
+      {
+        challenge: "Handling real-time inventory updates across multiple store locations.",
+        solution: "Implemented a distributed inventory system with optimistic UI updates and conflict resolution.",
+      },
+    ],
+    achievements: [
+      { value: "5", label: "Store Locations" },
+      { value: "99.9%", label: "Uptime" },
+    ],
+    gallery: [],
+    timeline: [
+      { label: "Discovery" },
+      { label: "Planning" },
+      { label: "Development" },
+    ],
+  },
+  {
+    id: "checkclip",
+    name: "Checkclip",
+    type: "Task Management Tool",
+    status: "maintenance",
+    category: "internal-products",
+    organization: "MY_TEAM_PRODUCT",
+    info: {
+      role: "Project Manager",
+      industry: "Internal Tools",
+      duration: "2023 - Present",
+      teamSize: "3 Members",
+      platform: "Web Application",
+    },
+    summary:
+      "A lightweight task management and checklist tool for personal and team productivity with reminders and collaboration features.",
     responsibilities: [
       "Product Discovery",
       "Sprint Planning",
@@ -352,19 +458,65 @@ export const archiveProjects: ArchiveProject[] = [
     ],
     challenges: [
       {
-        challenge: "Aggregating data from multiple project management tools into one view.",
-        solution: "Built API connectors for Jira, ClickUp, and GitHub with a unified data model.",
+        challenge: "Balancing simplicity with powerful features for different user types.",
+        solution: "Created a progressive interface that reveals advanced features based on user behavior and preferences.",
       },
     ],
     achievements: [
-      { value: "5", label: "Active Projects Tracked" },
-      { value: "20%", label: "Time Saved on Reporting" },
+      { value: "500+", label: "Active Users" },
+      { value: "10K+", label: "Tasks Completed" },
     ],
     gallery: [],
     timeline: [
       { label: "Discovery" },
       { label: "Planning" },
       { label: "Development" },
+      { label: "Launch" },
+    ],
+  },
+  {
+    id: "papaya",
+    name: "Papaya",
+    type: "File Sharing Platform",
+    status: "maintenance",
+    category: "internal-products",
+    organization: "MY_TEAM_PRODUCT",
+    info: {
+      role: "Project Manager",
+      industry: "Internal Tools",
+      duration: "2023 - Present",
+      teamSize: "3 Members",
+      platform: "Web Application",
+    },
+    summary:
+      "A secure file sharing and collaboration platform for teams with features like large file transfers, folder sharing, and access control using PostgreSQL for metadata management.",
+    responsibilities: [
+      "Product Discovery",
+      "Sprint Planning",
+      "Delivery Management",
+    ],
+    tech: [
+      { name: "Next.js", icon: "next" },
+      { name: "Node.js", icon: "node" },
+      { name: "TypeScript", icon: "typescript" },
+      { name: "PostgreSQL", icon: "postgresql" },
+    ],
+    challenges: [
+      {
+        challenge: "Managing large file transfers efficiently without blocking the UI.",
+        solution: "Implemented chunked uploads with resumable transfers and progress indicators.",
+      },
+    ],
+    achievements: [
+      { value: "1TB+", label: "Data Transferred" },
+      { value: "200+", label: "Teams Using" },
+    ],
+    gallery: [],
+    timeline: [
+      { label: "Discovery" },
+      { label: "Planning" },
+      { label: "Development" },
+      { label: "Launch" },
     ],
   },
   {
@@ -373,6 +525,7 @@ export const archiveProjects: ArchiveProject[] = [
     type: "AI-Powered Sprint Analytics",
     status: "archived",
     category: "experiments",
+    organization: "PERSONAL_PROJECTS",
     info: {
       role: "Project Manager",
       industry: "R&D",
@@ -413,6 +566,7 @@ export const archiveProjects: ArchiveProject[] = [
     type: "AI Delivery Analytics",
     status: "archived",
     category: "experiments",
+    organization: "PERSONAL_PROJECTS",
     info: {
       role: "Project Manager",
       industry: "R&D",

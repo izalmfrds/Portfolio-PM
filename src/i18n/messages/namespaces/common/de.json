@@ -42,5 +42,14 @@
   "source-code": "Quellcode",
   "switch-to-project": "Zum Projekt {project} wechseln",
   "version": "Version",
-  "view-project": "Projekt ansehen"
+  "view-project": "Projekt ansehen",
+  "organization-altemeda": "ALTIMEDA",
+  "organization-my-team-product": "MY TEAM PRODUCT",
+  "organization-telkom-foundation": "TELKOM FOUNDATION",
+  "organization-personal-projects": "PERSONAL PROJECTS",
+  "project-archive": "PROJEKTARCHIV",
+  "archive-description": "Alle Projekte, Fallstudien und Experimente erkunden.",
+  "select-project": "Wählen Sie ein Projekt aus, um Details anzuzeigen",
+  "no-results": "Keine Projekte gefunden",
+  "search-projects": "Projekte suchen..."
 }

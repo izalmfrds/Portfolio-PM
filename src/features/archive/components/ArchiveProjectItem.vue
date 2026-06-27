@@ -26,8 +26,7 @@ const emit = defineEmits<{
   display: flex;
   align-items: center;
   width: 100%;
-  padding: var(--space-xs) var(--space-sm);
-  padding-left: var(--space-xl);
+  padding: var(--space-sm) var(--space-md);
   border: none;
   background: none;
   cursor: pointer;
@@ -35,7 +34,7 @@ const emit = defineEmits<{
   font-size: var(--font-size-sm);
   color: var(--color-text-300);
   text-align: left;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-md);
   transition: background-color 0.15s ease, color 0.15s ease;
 
   &:hover {

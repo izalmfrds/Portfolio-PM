@@ -4,6 +4,8 @@ export type ArchiveProjectStatus = "production" | "active-development" | "mainte
 
 export type ArchiveCategory = "enterprise-systems" | "education" | "internal-products" | "experiments";
 
+export type ArchiveOrganization = "ALTIMEDA" | "MY_TEAM_PRODUCT" | "TELKOM_FOUNDATION" | "PERSONAL_PROJECTS";
+
 export interface ArchiveAchievement {
   value: string;
   label: string;
@@ -39,6 +41,7 @@ export interface ArchiveProject {
   type: string;
   status: ArchiveProjectStatus;
   category: ArchiveCategory;
+  organization: ArchiveOrganization;
   info: ArchiveProjectInfo;
   summary: string;
   responsibilities: string[];

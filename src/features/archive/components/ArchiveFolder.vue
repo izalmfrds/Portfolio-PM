@@ -1,25 +1,28 @@
 <script setup lang="ts">
 import { t } from "../../../i18n/utils/translate";
 import ArchiveProjectItem from "./ArchiveProjectItem.vue";
-import type { ArchiveProject, ArchiveCategory } from "../types";
+import type { ArchiveProject, ArchiveOrganization } from "../types";
 
 defineProps<{
-  category: ArchiveCategory;
+  category: ArchiveOrganization;
   projects: ArchiveProject[];
   expanded: boolean;
   selectedProjectId: string | null;
 }>();
 
 const emit = defineEmits<{
-  (e: "toggle", category: string): void;
+  (e: "toggle", organization: string): void;
   (e: "select", id: string): void;
 }>();
 
-const categoryLabels: Record<ArchiveCategory, string> = {
-  "enterprise-systems": t("category-enterprise-systems"),
-  education: t("category-education"),
-  "internal-products": t("category-internal-products"),
-  experiments: t("category-experiments"),
+const getOrganizationLabel = (org: ArchiveOrganization): string => {
+  const labels: Record<ArchiveOrganization, string> = {
+    "ALTIMEDA": t("organization-altemeda"),
+    "MY_TEAM_PRODUCT": t("organization-my-team-product"),
+    "TELKOM_FOUNDATION": t("organization-telkom-foundation"),
+    "PERSONAL_PROJECTS": t("organization-personal-projects"),
+  };
+  return labels[org] || org;
 };
 </script>
 
@@ -42,12 +45,12 @@ const categoryLabels: Record<ArchiveCategory, string> = {
       <svg class="archive-folder-icon" viewBox="0 0 24 24" fill="currentColor">
         <path d="M2 6a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6z" />
       </svg>
-      <span class="archive-folder-name">{{ categoryLabels[category] }}</span>
+      <span class="archive-folder-name">{{ getOrganizationLabel(category) }}</span>
       <span class="archive-folder-count">({{ projects.length }})</span>
     </button>
     <div v-if="expanded" class="archive-folder-children">
       <ArchiveProjectItem
-        v-for="project in projects"
+        v-for="project in [...projects].sort((a, b) => a.name.localeCompare(b.name))"
         :key="project.id"
         :project="project"
         :is-active="selectedProjectId === project.id"
@@ -65,9 +68,9 @@ const categoryLabels: Record<ArchiveCategory, string> = {
   &-header {
     display: flex;
     align-items: center;
-    gap: var(--space-xs);
+    gap: var(--space-sm);
     width: 100%;
-    padding: var(--space-xs) var(--space-sm);
+    padding: var(--space-sm) var(--space-md);
     border: none;
     background: none;
     cursor: pointer;
@@ -76,7 +79,7 @@ const categoryLabels: Record<ArchiveCategory, string> = {
     font-weight: 700;
     color: var(--color-text-400);
     text-align: left;
-    border-radius: var(--radius-sm);
+    border-radius: var(--radius-md);
     transition: background-color 0.15s ease;
 
     &:hover {
@@ -85,8 +88,8 @@ const categoryLabels: Record<ArchiveCategory, string> = {
   }
 
   &-chevron {
-    width: 14px;
-    height: 14px;
+    width: 16px;
+    height: 16px;
     flex-shrink: 0;
     color: var(--color-text-300);
     transition: transform 0.2s ease;
@@ -97,8 +100,8 @@ const categoryLabels: Record<ArchiveCategory, string> = {
   }
 
   &-icon {
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
     flex-shrink: 0;
     color: var(--color-orange-400);
   }
@@ -121,7 +124,9 @@ const categoryLabels: Record<ArchiveCategory, string> = {
   &-children {
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: var(--space-xs);
+    padding-left: var(--space-lg);
+    margin-top: var(--space-xs);
   }
 }
 </style>

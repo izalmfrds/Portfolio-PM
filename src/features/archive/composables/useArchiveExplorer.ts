@@ -1,9 +1,9 @@
 import { ref, computed } from "vue";
-import { archiveProjects, archiveCategories } from "../data";
+import { archiveProjects, archiveOrganizations } from "../data";
 import type { ArchiveProject } from "../types";
 
-const selectedProjectId = ref<string | null>(null);
-const expandedFolders = ref<Set<string>>(new Set(archiveCategories));
+const selectedProjectId = ref<string | null>("adenco");
+const expandedFolders = ref<Set<string>>(new Set(["ALTIMEDA"]));
 const searchQuery = ref("");
 
 export function useArchiveExplorer() {
@@ -18,15 +18,15 @@ export function useArchiveExplorer() {
     return archiveProjects.filter(
       (p) =>
         p.name.toLowerCase().includes(q) ||
-        p.category.toLowerCase().replace("-", " ").includes(q) ||
+        p.organization.toLowerCase().replace("_", " ").includes(q) ||
         p.tech.some((t) => t.name.toLowerCase().includes(q)),
     );
   });
 
   const groupedProjects = computed(() => {
     const groups: Record<string, ArchiveProject[]> = {};
-    for (const cat of archiveCategories) {
-      groups[cat] = filteredProjects.value.filter((p) => p.category === cat);
+    for (const org of archiveOrganizations) {
+      groups[org] = filteredProjects.value.filter((p) => p.organization === org);
     }
     return groups;
   });
@@ -37,25 +37,25 @@ export function useArchiveExplorer() {
     selectedProjectId.value = id;
   }
 
-  function toggleFolder(category: string) {
+  function toggleFolder(organization: string) {
     const s = new Set(expandedFolders.value);
-    if (s.has(category)) {
-      s.delete(category);
+    if (s.has(organization)) {
+      s.delete(organization);
     } else {
-      s.add(category);
+      s.add(organization);
     }
     expandedFolders.value = s;
   }
 
-  function isFolderExpanded(category: string): boolean {
-    return expandedFolders.value.has(category);
+  function isFolderExpanded(organization: string): boolean {
+    return expandedFolders.value.has(organization);
   }
 
   function setSearch(query: string) {
     searchQuery.value = query;
     if (query.trim()) {
       // Auto-expand all folders when searching
-      expandedFolders.value = new Set(archiveCategories);
+      expandedFolders.value = new Set(archiveOrganizations);
     }
   }
 

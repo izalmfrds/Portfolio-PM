@@ -1,21 +1,15 @@
 <script setup lang="ts">
 import { t } from "../../../i18n/utils/translate";
 import Banner from "../../../components/Banner.vue";
-import { archiveProjects, archiveCategories } from "../data";
 import { useRouter } from "../../../composables/useRouter";
 import { lenis } from "../../../composables/useScroll";
 
 const router = useRouter();
 
-const totalProjects = archiveProjects.length;
-const totalCategories = archiveCategories.length;
-const earliestYear = Math.min(...archiveProjects.map((p) => parseInt(p.info.duration?.split(" - ")[0] ?? "2025")));
-const yearsExperience = new Date().getFullYear() - earliestYear;
-
 const handleBack = () => {
   // Navigate back to home page
   router.push("/");
-  
+
   // After navigation, scroll to projects section
   queueMicrotask(() => {
     if (lenis.value) {
@@ -41,7 +35,7 @@ const handleBack = () => {
       <h1 class="archive-header-copy">{{ t('archive') }}</h1>
       <p class="archive-header-desc">{{ t('archive-description') }}</p>
     </div>
-    <div class="archive-header-stats">
+    <!-- <div class="archive-header-stats">
       <div class="archive-stat">
         <span class="archive-stat-value">{{ totalProjects }}</span>
         <span class="archive-stat-label">{{ t('projects') }}</span>
@@ -54,7 +48,7 @@ const handleBack = () => {
         <span class="archive-stat-value">{{ yearsExperience }}</span>
         <span class="archive-stat-label">Years</span>
       </div>
-    </div>
+    </div> -->
   </header>
 </template>
 
@@ -62,7 +56,7 @@ const handleBack = () => {
 .archive-header {
   display: flex;
   flex-direction: column;
-  gap: var(--space-xl);
+  gap: var(--space-lg);
   width: 100%;
 
   &-title {
@@ -104,19 +98,13 @@ const handleBack = () => {
     color: var(--color-text-300);
     max-width: 600px;
   }
-
-  &-stats {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-md);
-  }
 }
 
 .archive-back-button {
   display: inline-flex;
   align-items: center;
   gap: var(--space-xs);
-  padding: var(--space-xs) var(--space-md);
+  padding: var(--space-sm) var(--space-md);
   border: var(--stroke-sm) solid color-mix(in srgb, var(--color-text-400) 20%, transparent);
   border-radius: 100px;
   background-color: var(--color-grayscale-400);
@@ -127,7 +115,6 @@ const handleBack = () => {
   cursor: pointer;
   transition: all 0.2s ease;
   width: fit-content;
-  margin-bottom: var(--space-md);
 
   svg {
     width: 18px;
@@ -146,30 +133,6 @@ const handleBack = () => {
 
   &:active {
     transform: scale(0.98);
-  }
-}
-
-.archive-stat {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: var(--space-sm) var(--space-lg);
-  border-radius: var(--radius-md);
-  background-color: var(--color-grayscale-400);
-  border: var(--stroke-sm) solid color-mix(in srgb, var(--color-text-400) 8%, transparent);
-  min-width: 100px;
-
-  &-value {
-    font-weight: 900;
-    font-size: var(--font-size-title-sm);
-    color: var(--color-text-400);
-  }
-
-  &-label {
-    font-size: var(--font-size-xs);
-    color: var(--color-text-300);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
   }
 }
 </style>
