@@ -51,5 +51,9 @@
   "archive-description": "Alle Projekte, Fallstudien und Experimente erkunden.",
   "select-project": "Wählen Sie ein Projekt aus, um Details anzuzeigen",
   "no-results": "Keine Projekte gefunden",
-  "search-projects": "Projekte suchen..."
+  "search-projects": "Projekte suchen...",
+  "home": "Startseite",
+  "breadcrumb-home": "Startseite",
+  "breadcrumb-projects": "Projekte",
+  "breadcrumb-archive": "Archiv"
 }

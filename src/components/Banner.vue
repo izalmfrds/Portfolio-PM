@@ -53,7 +53,7 @@ watchEffect((onInvalidate) => {
 
 <template>
   <div ref="bannerRef" class="banner" :class="`banner-size-${resolvedSize}`">
-    <div ref="backgroundRef" class="banner-background"></div>
+    <!-- <div ref="backgroundRef" class="banner-background"></div> -->
     <div class="banner-copy" :class="`banner-copy-size-${resolvedSize}`">
       <AppearingText
         :text="props.copy"
