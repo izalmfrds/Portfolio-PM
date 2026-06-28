@@ -109,6 +109,7 @@ const handleBreadcrumbClick = (path: string) => {
   top: 0;
   left: -8px;
   transform: translate(0, -20%) rotate(-4deg);
+  background-color: black;
 
   @include mixins.mq("lg") {
     left: -16px;
