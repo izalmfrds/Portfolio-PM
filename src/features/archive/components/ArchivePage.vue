@@ -1,12 +1,23 @@
 <script setup lang="ts">
+import { watch, nextTick } from "vue";
 import Layout from "../../../components/Layout.vue";
 import Footer from "../../../components/Footer.vue";
 import ArchiveHeader from "./ArchiveHeader.vue";
 import ArchiveExplorer from "./ArchiveExplorer.vue";
 import ArchiveDetail from "./ArchiveDetail.vue";
 import { useArchiveExplorer } from "../composables/useArchiveExplorer";
+import { lenis } from "../../../composables/useScroll";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const { selectedProject } = useArchiveExplorer();
+
+// When the selected project changes, the detail panel content changes height.
+// Lenis and ScrollTrigger need to recalculate after the DOM updates.
+watch(selectedProject, async () => {
+  await nextTick();
+  lenis.value?.resize();
+  ScrollTrigger.refresh();
+});
 </script>
 
 <template>
@@ -74,11 +85,5 @@ const { selectedProject } = useArchiveExplorer();
   gap: var(--space-xl);
   flex: 1;
   min-width: 0;
-
-  @include mixins.mq("lg") {
-    overflow-y: auto;
-    max-height: calc(100vh - 80px);
-    padding-right: var(--space-sm);
-  }
 }
 </style>
