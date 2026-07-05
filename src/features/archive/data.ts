@@ -9,7 +9,7 @@ import checkclipThumb from "../../assets/thumbnails/checkclip.jpeg";
 import empatrimaThumb from "../../assets/thumbnails/empatrima.jpeg"
 import papanclipThumb from "../../assets/thumbnails/papanclip.jpeg";
 import xposThumb from "../../assets/thumbnails/xpos.jpeg";
-
+import linkclipThumb from "../../assets/thumbnails/linkclip.jpeg";
 
 //start
 
@@ -446,18 +446,18 @@ export const archiveProjects: ArchiveProject[] = [
     id: "papanclip",
     name: "Papanclip",
     type: "Internal Dashboard Tool",
-    status: "maintenance",
+    status: "active-development",
     category: "internal-products",
     organization: "MY_TEAM_PRODUCT",
     info: {
       role: "Project Manager",
       industry: "Internal Tools",
-      duration: "2023 - Present",
+      duration: "2026 - Present",
       teamSize: "3 Members",
       platform: "Web Application",
     },
     summary:
-      "An internal clipboard and snippet management tool for the development team, enabling quick access to frequently used commands, links, and templates.",
+     "A Kanban-based project management tool for Project Managers, streamlining task tracking, team workload management, and real-time workflow visualization.",
       mockup:papanclipThumb,
     responsibilities: [
       "Product Discovery",
@@ -500,15 +500,15 @@ export const archiveProjects: ArchiveProject[] = [
     id: "x-pos",
     name: "X-POS",
     type: "Point of Sale System",
-    status: "active-development",
+    status: "production",
     category: "internal-products",
     organization: "MY_TEAM_PRODUCT",
     info: {
       role: "Project Manager",
       industry: "Retail",
-      duration: "2024 - Present",
-      teamSize: "4 Members",
-      platform: "Web Application",
+      duration: "2024 - 2025",
+      teamSize: "3 Members",
+      platform: "Web Application & Mobile Application",
     },
     summary:
       "A modern point of sale system for retail businesses with inventory management, customer tracking, and sales analytics.",
@@ -557,7 +557,7 @@ export const archiveProjects: ArchiveProject[] = [
     id: "checkclip",
     name: "Checkclip",
     type: "Task Management Tool",
-    status: "maintenance",
+    status: "active-development",
     category: "internal-products",
     organization: "MY_TEAM_PRODUCT",
     info: {
@@ -568,7 +568,7 @@ export const archiveProjects: ArchiveProject[] = [
       platform: "Web Application",
     },
     summary:
-      "A lightweight task management and checklist tool for personal and team productivity with reminders and collaboration features.",
+      "An internal corporate management tool for employee monitoring, streamlining check-in/check-out, task tracking, leave requests, WFH management, and automated payslip processing.",
       mockup:checkclipThumb,
     responsibilities: [
       "Product Discovery",
@@ -610,9 +610,9 @@ export const archiveProjects: ArchiveProject[] = [
   },
   {
     id: "papaya",
-    name: "Papaya",
-    type: "File Sharing Platform",
-    status: "maintenance",
+    name: "LinkClip",
+    type: "Loop Agentic Platform",
+    status: "active-development",
     category: "internal-products",
     organization: "MY_TEAM_PRODUCT",
     info: {
@@ -623,7 +623,8 @@ export const archiveProjects: ArchiveProject[] = [
       platform: "Web Application",
     },
     summary:
-      "A secure file sharing and collaboration platform for teams with features like large file transfers, folder sharing, and access control using PostgreSQL for metadata management.",
+      "An AI agent loop platform built using Hermes, utilizing central file management as its primary control center and knowledge base.",
+    mockup:linkclipThumb,
     responsibilities: [
       "Product Discovery",
       "Sprint Planning",
