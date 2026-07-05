@@ -3,6 +3,9 @@ import thumbnailAdenco from "../../../assets/thumbnails/adenco-thumb.png";
 import thumbnailWCC from "../../../assets/thumbnails/wcc-thumb.png";
 import thumbnailDigits from "../../../assets/thumbnails/digits-thumb.png";
 import thumbnailBaitulAdab from "../../../assets/images/projects/baituladab/baitul-thumb.webp";
+import thumbnailPapanclip from "../../../assets/thumbnails/papanclip.jpeg";
+import thumbnailAimos from "../../../assets/thumbnails/AImos.jpeg";
+import thumbnailAtlas from "../../../assets/thumbnails/atlas.jpeg";
 
 import type { ProjectPreview } from "../../types";
 
@@ -30,6 +33,24 @@ export default [
     slug: "baituladab",
     thumbnail: thumbnailBaitulAdab,
     description: "Landing page for Baitul Adab Kids Schools",
+  },
+  {
+    title: "Papanclip",
+    slug: "papanclip",
+    thumbnail: thumbnailPapanclip,
+    description: "Internal clipboard & snippet management tool",
+  },
+  {
+    title: "AIMOS",
+    slug: "aimos",
+    thumbnail: thumbnailAimos,
+    description: "AI-powered operations monitoring system",
+  },
+  {
+    title: "ATLAS",
+    slug: "atlas",
+    thumbnail: thumbnailAtlas,
+    description: "Workflow automation platform",
   },
   /**  {
     title: "WebGL Particles",

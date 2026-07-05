@@ -4,6 +4,9 @@ import thumbnailPokedex from "../../../assets/thumbnails/pokedex.webp";
 import thumbnailSharkie from "../../../assets/thumbnails/sharkie.webp";
 import thumbnailStreakon from "../../../assets/thumbnails/streakon.webp";
 import thumbnailBaitulAdab from "../../../assets/images/projects/baituladab/baitul-thumb.webp";
+import thumbnailPapanclip from "../../../assets/thumbnails/papanclip.jpeg";
+import thumbnailAimos from "../../../assets/thumbnails/AImos.jpeg";
+import thumbnailAtlas from "../../../assets/thumbnails/atlas.jpeg";
 
 import type { ProjectPreview } from "../../types";
 
@@ -31,6 +34,24 @@ export default [
     slug: "baituladab",
     thumbnail: thumbnailBaitulAdab,
     description: "Landingpage für Baitul Adab Kids Schools",
+  },
+  {
+    title: "Papanclip",
+    slug: "papanclip",
+    thumbnail: thumbnailPapanclip,
+    description: "Internes Clipboard- & Snippet-Management-Tool",
+  },
+  {
+    title: "AIMOS",
+    slug: "aimos",
+    thumbnail: thumbnailAimos,
+    description: "KI-gestütztes Betriebsüberwachungssystem",
+  },
+  {
+    title: "ATLAS",
+    slug: "atlas",
+    thumbnail: thumbnailAtlas,
+    description: "Workflow-Automatisierungsplattform",
   },
   {
     title: "Sharkie",
