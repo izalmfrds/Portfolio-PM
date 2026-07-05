@@ -1,8 +1,18 @@
 import type { ArchiveProject, ArchiveCategory, ArchiveOrganization } from "./types";
-
 import adencoThumb from "../../assets/thumbnails/adenco-thumb.png";
 import digitsThumb from "../../assets/thumbnails/digits-thumb.png";
 import wccThumb from "../../assets/thumbnails/wcc-thumb.png";
+import aimosThumb from "../../assets/thumbnails/AImos.jpeg";
+import atlasThumb from "../../assets/thumbnails/atlas.jpeg";
+import baitulThumb from "../../assets/images/projects/baituladab/baitul-thumb.webp";
+import checkclipThumb from "../../assets/thumbnails/checkclip.jpeg";
+import empatrimaThumb from "../../assets/thumbnails/empatrima.jpeg"
+import papanclipThumb from "../../assets/thumbnails/papanclip.jpeg";
+import xposThumb from "../../assets/thumbnails/xpos.jpeg";
+
+
+//start
+
 
 export const archiveOrganizations: ArchiveOrganization[] = [
   "ALTIMEDA",
@@ -22,7 +32,7 @@ export const archiveProjects: ArchiveProject[] = [
     info: {
       role: "Project Manager",
       industry: "Construction",
-      duration: "2023 - Present",
+      duration: "2025 - Present",
       teamSize: "12 Members",
       platform: "Web Application",
     },
@@ -37,6 +47,19 @@ export const archiveProjects: ArchiveProject[] = [
       "User Acceptance Testing",
       "Release Coordination",
       "Delivery Management",
+    ],
+    contributions: [
+      "Conducted business analysis and facilitated requirement gathering sessions with key stakeholders.",
+      "Defined project scope, timelines, and delivery plans to ensure successful project execution.",
+      "Coordinated stakeholders and development teams to align business needs with technical solutions.",
+      "Tracked project progress and managed risks to ensure on-time and high-quality delivery.",
+      "Provided regular project updates and reporting to support strategic decision-making.",
+      "Ensured solutions were delivered in accordance with business requirements and digital transformation objectives."
+    ],
+    outcomes: [
+      "Delivered a stable and scalable enterprise platform within timeline.",
+      "Improved operational efficiency through integrated project management workflows.",
+      "Built a strong foundation for future feature expansion across construction operations."
     ],
     tech: [
       { name: "Next.js", icon: "next" },
@@ -76,8 +99,8 @@ export const archiveProjects: ArchiveProject[] = [
     organization: "ALTIMEDA",
     info: {
       role: "Project Manager",
-      industry: "Human Resources",
-      duration: "2024 - Present",
+      industry: "Constructions",
+      duration: "2026 - Present",
       teamSize: "8 Members",
       platform: "Web Application",
     },
@@ -89,6 +112,17 @@ export const archiveProjects: ArchiveProject[] = [
       "Sprint Planning",
       "Stakeholder Management",
       "Delivery Management",
+    ],
+    contributions: [
+      "Led product discovery workshops to identify core workforce management needs.",
+      "Defined sprint plans and managed backlog prioritization for iterative delivery.",
+      "Coordinated cross-functional teams across HR and engineering departments.",
+      "Tracked delivery metrics and provided actionable insights to leadership."
+    ],
+    outcomes: [
+      "Delivered a workforce platform serving 200+ active users.",
+      "Improved scheduling efficiency across multiple departments.",
+      "Enabled data-driven workforce decisions through analytics dashboard."
     ],
     tech: [
       { name: "Next.js", icon: "next" },
@@ -118,23 +152,35 @@ export const archiveProjects: ArchiveProject[] = [
     id: "aimos",
     name: "AIMOS",
     type: "AI Operations System",
-    status: "completed",
+    status: "active-development",
     category: "enterprise-systems",
     organization: "ALTIMEDA",
     info: {
       role: "Project Manager",
-      industry: "Technology",
-      duration: "2023 - 2024",
-      teamSize: "6 Members",
+      industry: "Marketing",
+      duration: "2026 - Present",
+      teamSize: "12 Members",
       platform: "Web Application",
     },
     summary:
-      "An AI-powered operations monitoring system that provides predictive analytics and anomaly detection for business processes.",
+      "An AI-powered operations monitoring system that provides predictive analytics and anomaly detection for marketing business processes.",
+    mockup: aimosThumb,
     responsibilities: [
       "Requirement Analysis",
       "Sprint Planning",
       "User Acceptance Testing",
       "Release Coordination",
+    ],
+    contributions: [
+      "Conducted requirement analysis to translate AI capabilities into user-facing features.",
+      "Managed sprint cycles to balance ML experimentation with product delivery.",
+      "Facilitated UAT sessions ensuring AI predictions met business accuracy thresholds.",
+      "Coordinated releases integrating ML model updates with application deployments."
+    ],
+    outcomes: [
+      "Achieved 85% prediction accuracy for operational anomaly detection.",
+      "Successfully deployed 2 ML models into production environment.",
+      "Reduced manual monitoring effort through automated AI-driven insights."
     ],
     tech: [
       { name: "Next.js", icon: "next" },
@@ -171,17 +217,29 @@ export const archiveProjects: ArchiveProject[] = [
     info: {
       role: "Project Manager",
       industry: "Technology",
-      duration: "2024 - Present",
-      teamSize: "5 Members",
+      duration: "2026 - Present",
+      teamSize: "10 Members",
       platform: "Web Application",
     },
     summary:
       "A workflow automation platform that streamlines business processes through customizable automation rules and integrations with existing enterprise systems.",
+    mockup:atlasThumb,
     responsibilities: [
       "Product Discovery",
       "Sprint Planning",
       "Stakeholder Management",
       "Delivery Management",
+    ],
+    contributions: [
+      "Led product discovery to define automation use cases across business domains.",
+      "Managed sprint planning and delivery cadence for modular feature releases.",
+      "Aligned stakeholders on workflow automation strategy and integration priorities.",
+      "Ensured platform extensibility through structured architectural planning."
+    ],
+    outcomes: [
+      "Automated 50+ business workflows across enterprise operations.",
+      "Integrated 3 enterprise systems through extensible connector architecture.",
+      "Reduced manual process overhead significantly for participating teams."
     ],
     tech: [
       { name: "Next.js", icon: "next" },
@@ -231,6 +289,18 @@ export const archiveProjects: ArchiveProject[] = [
       "User Acceptance Testing",
       "Delivery Management",
     ],
+    contributions: [
+      "Facilitated product discovery sessions with educators and school administrators.",
+      "Defined sprint plans accommodating diverse school requirements and timelines.",
+      "Managed stakeholder communication across multiple educational institutions.",
+      "Led UAT sessions to validate platform usability with non-technical users.",
+      "Coordinated delivery milestones across enrollment, grading, and attendance modules."
+    ],
+    outcomes: [
+      "Successfully onboarded 5 schools managing 1000+ students.",
+      "Reduced administrative workload by 40% through process automation.",
+      "Delivered a configurable platform adaptable to different school types."
+    ],
     tech: [
       { name: "Next.js", icon: "next" },
       { name: "Node.js", icon: "node" },
@@ -275,11 +345,23 @@ export const archiveProjects: ArchiveProject[] = [
     },
     summary:
       "A school website and parent portal for an Islamic school network, featuring news, announcements, academic calendars, and online enrollment.",
+      mockup:baitulThumb,
     responsibilities: [
       "Requirement Analysis",
       "Product Discovery",
       "Stakeholder Management",
       "Release Coordination",
+    ],
+    contributions: [
+      "Conducted requirement analysis bridging school branding with modern web standards.",
+      "Facilitated product discovery with school administration and parent representatives.",
+      "Managed stakeholder expectations across 3 school branches with distinct needs.",
+      "Coordinated release cycles ensuring seamless transition from legacy communication channels."
+    ],
+    outcomes: [
+      "Launched unified web presence for 3 school branches.",
+      "Achieved 100% online enrollment adoption.",
+      "Improved parent-school communication through integrated portal features."
     ],
     tech: [
       { name: "Next.js", icon: "next" },
@@ -309,7 +391,7 @@ export const archiveProjects: ArchiveProject[] = [
     id: "empatrima-quiz",
     name: "Empatrima QUIZ",
     type: "Online Assessment Tool",
-    status: "completed",
+    status: "production",
     category: "education",
     organization: "MY_TEAM_PRODUCT",
     info: {
@@ -321,10 +403,21 @@ export const archiveProjects: ArchiveProject[] = [
     },
     summary:
       "An interactive online quiz platform for educational assessment, supporting multiple question types, timed exams, and automated grading.",
+      mockup:empatrimaThumb,
     responsibilities: [
       "Requirement Analysis",
       "Sprint Planning",
       "User Acceptance Testing",
+    ],
+    contributions: [
+      "Defined assessment platform requirements with educators and exam administrators.",
+      "Managed sprint planning to deliver timed exam and auto-grading features iteratively.",
+      "Led UAT sessions validating exam integrity and question randomization logic."
+    ],
+    outcomes: [
+      "Conducted 500+ exams with 99% platform uptime.",
+      "Ensured exam integrity through anti-cheating detection mechanisms.",
+      "Automated grading reduced assessment turnaround time significantly."
     ],
     tech: [
       { name: "Next.js", icon: "next" },
@@ -365,10 +458,21 @@ export const archiveProjects: ArchiveProject[] = [
     },
     summary:
       "An internal clipboard and snippet management tool for the development team, enabling quick access to frequently used commands, links, and templates.",
+      mockup:papanclipThumb,
     responsibilities: [
       "Product Discovery",
       "Sprint Planning",
       "Delivery Management",
+    ],
+    contributions: [
+      "Led product discovery to identify team productivity pain points and tool requirements.",
+      "Managed iterative sprint delivery of clipboard, tagging, and search features.",
+      "Coordinated browser extension integration with the cloud-synced backend."
+    ],
+    outcomes: [
+      "Adopted by 10+ team members for daily workflow optimization.",
+      "Saved 1000+ snippets improving team knowledge sharing.",
+      "Streamlined repetitive tasks through quick-access command templates."
     ],
     tech: [
       { name: "Next.js", icon: "next" },
@@ -408,11 +512,23 @@ export const archiveProjects: ArchiveProject[] = [
     },
     summary:
       "A modern point of sale system for retail businesses with inventory management, customer tracking, and sales analytics.",
+      mockup:xposThumb,
     responsibilities: [
       "Product Discovery",
       "Sprint Planning",
       "Stakeholder Management",
       "Delivery Management",
+    ],
+    contributions: [
+      "Conducted product discovery sessions with retail stakeholders to define POS requirements.",
+      "Managed sprint delivery of inventory, customer tracking, and analytics modules.",
+      "Coordinated multi-location deployment strategy and stakeholder alignment.",
+      "Ensured real-time inventory sync architecture met performance requirements."
+    ],
+    outcomes: [
+      "Deployed POS system across 5 store locations with 99.9% uptime.",
+      "Enabled real-time inventory tracking across all retail locations.",
+      "Improved sales analytics capabilities for data-driven business decisions."
     ],
     tech: [
       { name: "Next.js", icon: "next" },
@@ -453,10 +569,21 @@ export const archiveProjects: ArchiveProject[] = [
     },
     summary:
       "A lightweight task management and checklist tool for personal and team productivity with reminders and collaboration features.",
+      mockup:checkclipThumb,
     responsibilities: [
       "Product Discovery",
       "Sprint Planning",
       "Delivery Management",
+    ],
+    contributions: [
+      "Led product discovery balancing simplicity with power-user feature needs.",
+      "Managed sprint planning for progressive feature disclosure implementation.",
+      "Coordinated delivery of collaboration and reminder features across platforms."
+    ],
+    outcomes: [
+      "Achieved 500+ active users with high engagement rates.",
+      "Facilitated completion of 10K+ tasks across user base.",
+      "Built a progressive interface adapting to different user expertise levels."
     ],
     tech: [
       { name: "Next.js", icon: "next" },
@@ -502,6 +629,16 @@ export const archiveProjects: ArchiveProject[] = [
       "Sprint Planning",
       "Delivery Management",
     ],
+    contributions: [
+      "Led product discovery identifying secure file sharing needs for distributed teams.",
+      "Managed sprint delivery of chunked upload, folder sharing, and access control features.",
+      "Coordinated backend architecture planning for large file transfer optimization."
+    ],
+    outcomes: [
+      "Transferred 1TB+ of data securely across 200+ teams.",
+      "Enabled resumable file transfers reducing upload failure rates.",
+      "Delivered enterprise-grade access control for sensitive file sharing."
+    ],
     tech: [
       { name: "Next.js", icon: "next" },
       { name: "Node.js", icon: "node" },
@@ -546,6 +683,15 @@ export const archiveProjects: ArchiveProject[] = [
       "Product Discovery",
       "Sprint Planning",
     ],
+    contributions: [
+      "Led product discovery exploring AI applications for sprint prediction.",
+      "Managed experimental sprint cycles for model training and validation."
+    ],
+    outcomes: [
+      "Achieved 70% risk prediction accuracy on sprint delivery.",
+      "Analyzed 3 sprints generating actionable risk insights.",
+      "Validated feasibility of AI-driven sprint planning assistance."
+    ],
     tech: [
       { name: "Next.js", icon: "next" },
       { name: "TypeScript", icon: "typescript" },
@@ -586,6 +732,15 @@ export const archiveProjects: ArchiveProject[] = [
     responsibilities: [
       "Product Discovery",
       "Requirement Analysis",
+    ],
+    contributions: [
+      "Conducted product discovery mapping AI insight generation to actionable recommendations.",
+      "Defined requirements for structured recommendation engine architecture."
+    ],
+    outcomes: [
+      "Generated 15+ actionable insights from delivery metadata analysis.",
+      "Piloted with 2 teams validating AI-driven process improvement recommendations.",
+      "Created a framework for translating AI outputs into specific workflow improvements."
     ],
     tech: [
       { name: "Next.js", icon: "next" },

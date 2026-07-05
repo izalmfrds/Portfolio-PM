@@ -46,6 +46,8 @@ export interface ArchiveProject {
   summary: string;
   mockup?: string;
   responsibilities: string[];
+  contributions: string[];
+  outcomes: string[];
   tech: CaseStudyTech[];
   challenges: ArchiveChallenge[];
   achievements: ArchiveAchievement[];

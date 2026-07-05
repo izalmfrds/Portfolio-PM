@@ -63,7 +63,7 @@ export interface CaseStudy {
 export interface ProjectContent {
   title: string;
   theme: "light" | "dark";
-  tags: TagVariant[];
+  tags: readonly TagVariant[];
   description?: string;
   videoBorder?: boolean;
   live?: string;
