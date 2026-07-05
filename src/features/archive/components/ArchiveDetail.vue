@@ -212,7 +212,7 @@ const executionSteps = [
             </svg>
             {{ t('challenges') }}
           </h3>
-          <p class="archive-cao-text">{{ project.challenges[0].challenge }}</p>
+          <p class="archive-cao-text">{{ project.challenges[0]?.challenge }}</p>
         </div>
 
         <!-- Approach -->
@@ -225,7 +225,7 @@ const executionSteps = [
             </svg>
             {{ t('approach') }}
           </h3>
-          <p class="archive-cao-text">{{ project.challenges[0].solution }}</p>
+          <p class="archive-cao-text">{{ project.challenges[0]?.solution }}</p>
         </div>
 
         <!-- Outcomes -->

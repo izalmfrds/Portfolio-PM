@@ -74,5 +74,11 @@ const { selectedProject } = useArchiveExplorer();
   gap: var(--space-xl);
   flex: 1;
   min-width: 0;
+
+  @include mixins.mq("lg") {
+    overflow-y: auto;
+    max-height: calc(100vh - 80px);
+    padding-right: var(--space-sm);
+  }
 }
 </style>
