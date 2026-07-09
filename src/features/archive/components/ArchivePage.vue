@@ -11,9 +11,15 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const { selectedProject } = useArchiveExplorer();
 
-// When the selected project changes, the detail panel content changes height.
-// Lenis and ScrollTrigger need to recalculate after the DOM updates.
+// When the selected project changes, scroll to top instantly then let
+// Lenis and ScrollTrigger recalculate the new page height.
 watch(selectedProject, async () => {
+  // Snap to top immediately — no smooth animation, no flicker
+  if (lenis.value) {
+    lenis.value.scrollTo(0, { immediate: true });
+  } else {
+    window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
+  }
   await nextTick();
   lenis.value?.resize();
   ScrollTrigger.refresh();
